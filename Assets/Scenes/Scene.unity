@@ -320,9 +320,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a5ca6db03cea49489bed89cab1d8817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
-  accelRate: 1.5
-  decelRate: 1.5
+  maxSpeed: 7.5
+  accelRate: 3
+  decelRate: 3
 --- !u!1 &960544736
 GameObject:
   m_ObjectHideFlags: 0
