@@ -51,6 +51,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
                 //Debug.Log("AAA");
                 rectTransform.anchoredPosition = home;
                 GetComponentInChildren<MinionData>().hubLocation = home;
+                GetComponentInChildren<MinionData>().gameLocation = home;
                 GetComponentInChildren<MinionData>().active = true;
             }
             else

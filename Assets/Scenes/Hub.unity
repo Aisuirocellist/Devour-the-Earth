@@ -201,7 +201,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1891415871}
   m_HandleRect: {fileID: 1891415870}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -753,6 +753,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1484820966}
     m_Modifications:
+    - target: {fileID: 643445770383189499, guid: b08aee385ef83bc43859a3fbf704b7a3, type: 3}
+      propertyPath: shipType
+      value: 
+      objectReference: {fileID: 5239364460836554727, guid: eb8b229f0eaebd847a0cefe41a1eced9, type: 3}
     - target: {fileID: 3362224128636858028, guid: b08aee385ef83bc43859a3fbf704b7a3, type: 3}
       propertyPath: m_Name
       value: MinionNode (1)
@@ -1510,6 +1514,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1484820966}
     m_Modifications:
+    - target: {fileID: 643445770383189499, guid: b08aee385ef83bc43859a3fbf704b7a3, type: 3}
+      propertyPath: hubStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 643445770383189499, guid: b08aee385ef83bc43859a3fbf704b7a3, type: 3}
+      propertyPath: shipType
+      value: 
+      objectReference: {fileID: 3501717510986240449, guid: 5f81a1243cf06ce4facdd72b6024d4ff, type: 3}
     - target: {fileID: 3362224128636858028, guid: b08aee385ef83bc43859a3fbf704b7a3, type: 3}
       propertyPath: m_Name
       value: MinionNode

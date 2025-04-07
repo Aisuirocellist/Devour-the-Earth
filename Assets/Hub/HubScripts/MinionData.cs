@@ -1,5 +1,7 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MinionData : MonoBehaviour
 {
@@ -8,48 +10,75 @@ public class MinionData : MonoBehaviour
     public Vector2 gameLocation;
     public bool active;
 
-    public bool runStart;
+    public bool hubStart;
+    public bool gameStart;
 
     [SerializeField] private GameObject StickerPrefab;
     [SerializeField] private Transform grid;
     [SerializeField] private Canvas canvas;
+    [SerializeField] private GameObject player;
 
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "Hub")
+        {
+            hubStart = true;
+        }
+        else if (SceneManager.GetActiveScene().name == "Scene")
+        {
+            gameStart = true;
+        }
+    }
     private void Update()
     {
-        if (runStart && SceneManager.GetActiveScene().name == "Hub")
+        if (hubStart && SceneManager.GetActiveScene().name == "Hub")
         {
-            runStart = false;
-            setup();
+            hubStart = false;
+            hubSetup();
+        }
+        else if (gameStart && SceneManager.GetActiveScene().name == "Scene")
+        {
+            gameStart = false;
+            gameSetup();
         }
     }
 
-    private void setup() 
+    private void hubSetup() 
     {
-        grid = GameObject.Find("Canvas").transform.Find("Ship Menu").Find("Viewport").Find("Content");
-        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+            grid = GameObject.Find("Canvas").transform.Find("Ship Menu").Find("Viewport").Find("Content");
+            canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
-        Scene currentScene = SceneManager.GetActiveScene();
-        if (currentScene.name == "Hub")
-        {
+            GameObject sticker = Instantiate(StickerPrefab);
+            sticker.transform.SetParent(canvas.transform, true);
+            sticker.GetComponent<RectTransform>().localScale = Vector3.one;
+            sticker.GetComponentInChildren<UnityEngine.UI.Image>().sprite = shipType.GetComponent<SpriteRenderer>().sprite;
+
+
             if (active)
             {
-                Debug.Log("Hello");
-                GameObject sticker = Instantiate(StickerPrefab);
-                sticker.transform.SetParent(canvas.transform, true);
+                //Debug.Log("Hello");
                 sticker.GetComponent<RectTransform>().anchorMax = new Vector2(0,1);
                 sticker.GetComponent<RectTransform>().anchorMin = new Vector2(0, 1);
-                transform.SetParent(sticker.transform);
                 sticker.GetComponent<RectTransform>().anchoredPosition = GetComponent<MinionData>().hubLocation;
-                sticker.GetComponent<RectTransform>().localScale = Vector3.one;
             }
             else
             {
-                GameObject sticker = Instantiate(StickerPrefab);
                 sticker.transform.SetParent(grid);
-                sticker.GetComponent<RectTransform>().localScale = Vector3.one;
-                transform.SetParent(sticker.transform);
             }
-        }
+            transform.SetParent(sticker.transform);
+    }
+    private void gameSetup() 
+    {
+            player = GameObject.Find("Player");
+
+            if (active)
+            {
+                transform.position = gameLocation;
+                GameObject minion = Instantiate(shipType);
+                minion.transform.SetParent(player.transform);
+                this.transform.SetParent(minion.transform);
+                minion.transform.position = this.transform.position;
+            }
     }
 
 }

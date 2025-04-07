@@ -31,8 +31,11 @@ public class ControleScript : MonoBehaviour
             {
                 minion.transform.SetParent(collectedMinionNodes);
             }
+
             if (scene == "Hub")
-                minion.GetComponent<MinionData>().runStart = true;
+                minion.GetComponent<MinionData>().hubStart = true;
+            if(scene == "Scene")
+                minion.GetComponent<MinionData>().gameStart = true;
         }
 
     }

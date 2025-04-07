@@ -33,6 +33,7 @@ public class DropArea : MonoBehaviour, IDropHandler
                         itemScript.CanRotate(true);
                         itemScript.home = dropObj.GetComponent<RectTransform>().anchoredPosition;
                         dropObj.GetComponentInChildren<MinionData>().hubLocation = itemScript.home;
+                        dropObj.GetComponentInChildren<MinionData>().gameLocation = itemScript.home;
                         dropObj.GetComponentInChildren<MinionData>().active = true;
                         //Debug.Log("Shiparea");
                     }
