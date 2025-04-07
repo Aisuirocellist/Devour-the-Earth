@@ -103,27 +103,7 @@
     },
     "com.unity.burst": {
       "version": "1.8.19",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "depth": 3,
-=======
       "depth": 2,
->>>>>>> Stashed changes
-=======
-      "depth": 2,
->>>>>>> Stashed changes
-=======
-      "depth": 2,
->>>>>>> Stashed changes
-=======
-      "depth": 2,
->>>>>>> Stashed changes
-=======
-      "depth": 2,
->>>>>>> Stashed changes
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
@@ -218,20 +198,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     "com.unity.render-pipelines.core": {
       "version": "17.0.4",
       "depth": 1,
@@ -291,19 +257,6 @@
         "com.unity.searcher": "4.9.3"
       }
     },
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     "com.unity.test-framework": {
       "version": "1.5.1",
       "depth": 0,
