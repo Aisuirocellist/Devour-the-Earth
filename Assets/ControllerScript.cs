@@ -28,6 +28,7 @@ public class ControllerScript : MonoBehaviour
     }
 
     private void setUpMinions(string scene) {
+
         GameObject[] allMinions = GameObject.FindGameObjectsWithTag("MinionNode");
 
         foreach (GameObject minion in allMinions)
