@@ -19,10 +19,15 @@ public class AssimilationBullet : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         EnemyState enemy = collider.gameObject.GetComponent<EnemyState>();
+        EarthState earth = collider.gameObject.GetComponent<EarthState>();
 
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
+        }
+        if (earth != null)
+        {
+            earth.TakeDamage(damage);
         }
 
         Destroy(gameObject);
