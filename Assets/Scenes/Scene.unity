@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 368997901}
   - component: {fileID: 368997900}
   m_Layer: 0
-  m_Name: SceneControler
+  m_Name: Scene Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -947,6 +947,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2204334097094763169, guid: 034cf872971e01f42b9bafc2246ab811, type: 3}
+      propertyPath: rotSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2314615131601612935, guid: 034cf872971e01f42b9bafc2246ab811, type: 3}
       propertyPath: m_Name
       value: Player
@@ -993,11 +997,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6885341336972036174, guid: 034cf872971e01f42b9bafc2246ab811, type: 3}
       propertyPath: accelRate
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6885341336972036174, guid: 034cf872971e01f42b9bafc2246ab811, type: 3}
       propertyPath: decelRate
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
