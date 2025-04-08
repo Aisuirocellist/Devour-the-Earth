@@ -1,4 +1,4 @@
-using Microsoft.Unity.VisualStudio.Editor;
+//using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -80,7 +80,9 @@ public class MinionData : MonoBehaviour
             this.transform.SetParent(minion.transform);
             minion.transform.position = player.transform.position;
             minion.transform.SetParent(player.transform);
+
             minion.transform.localPosition = gameLocation;
+
             minion.transform.localRotation = minionAngle;
             this.transform.localPosition = Vector2.zero;
         }
@@ -88,11 +90,28 @@ public class MinionData : MonoBehaviour
 
     public Vector2 hubToGameLocation() 
     {
-        float scale = (2f * Camera.main.orthographicSize) / canvas.GetComponent<CanvasScaler>().referenceResolution.y;
-
         GameObject ship = GameObject.Find("Centerpiece");
-        Vector2 offset = ((Vector2)this.transform.position - (Vector2)ship.transform.position)*scale*2f;
-        return offset;
+        Vector2 midpoint = ship.GetComponent<RectTransform>().TransformPoint(ship.GetComponent<RectTransform>().rect.center);
+        Vector2 minionPoint = this.GetComponentInParent<RectTransform>().TransformPoint(this.GetComponentInParent<RectTransform>().rect.center);
+        
+        //Debug.Log(midpoint);
+        //Debug.Log(minionPoint);
+
+        Vector2 offset = minionPoint - midpoint;
+        //Debug.Log(offset);
+        //Vector2 minionPosition = Camera.main.ScreenToWorldPoint(offset);
+        Vector2 minionPosition = Camera.main.ScreenToWorldPoint(new Vector3(offset.x, offset.y, Camera.main.nearClipPlane));
+
+        minionPosition.x += (8.891599f);
+        minionPosition.y += (3.990846f);
+
+        return minionPosition;
+        ////float scale = (2f * Camera.main.orthographicSize) / canvas.GetComponent<CanvasScaler>().referenceResolution.y;
+        //GameObject ship = GameObject.Find("Centerpiece");
+        ////Vector2 offset = ((Vector2)this.transform.position - (Vector2)ship.transform.position)*scale*2f;
+        ////return offset;
+
+
     }
 
 }
