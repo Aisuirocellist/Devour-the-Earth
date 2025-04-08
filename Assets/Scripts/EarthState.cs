@@ -33,6 +33,18 @@ public class EarthState : MonoBehaviour
         if (health < 0)
         {
             Destroy(gameObject);
+        } else if (health < 1)
+        {
+            //STAGE 5
+        } else if (health < 2)
+        {
+            //STAGE 4
+        } else if (health < 3)
+        {
+            //STAGE 3
+        } else
+        {
+            //STAGE 2
         }
 
         sr.color = Color.white;
