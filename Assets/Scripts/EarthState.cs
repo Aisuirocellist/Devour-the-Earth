@@ -33,6 +33,7 @@ public class EarthState : MonoBehaviour
         if (health < 0)
         {
             Destroy(gameObject);
+            Application.Quit();
         } else if (health < 1)
         {
             //STAGE 5
