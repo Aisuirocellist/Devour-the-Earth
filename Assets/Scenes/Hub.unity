@@ -432,7 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 1, b: 0.031751156, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -969,8 +969,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9b7589eb448124083efd49dbbd6e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minionNodes: {fileID: 0}
-  collectedMinionNodes: {fileID: 0}
 --- !u!4 &824143095
 Transform:
   m_ObjectHideFlags: 0
