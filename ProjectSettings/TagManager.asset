@@ -9,6 +9,8 @@ TagManager:
   - MinionNode
   - enemy
   - AvoidMe
+  - minion
+  - Earth
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - Water
   - UI
   - Bullet
-  - 
-  - 
+  - AvoidMe
+  - Player
   - 
   - 
   - 
