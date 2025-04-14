@@ -626,9 +626,9 @@ MonoBehaviour:
   laserEmergeTime: 0.15
   laserStayTime: 1
   laserFadeTime: 0.5
-  baseLaserWidth: 1
-  laserSizeIncreaseRatio: 1
-  laserDamageIncreaseRatio: 1
+  baseLaserWidth: 0.75
+  laserSizeIncreaseRatio: 0.3
+  laserDamageIncreaseRatio: 0.3
 --- !u!1 &1091435083
 GameObject:
   m_ObjectHideFlags: 0
