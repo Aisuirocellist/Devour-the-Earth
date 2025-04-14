@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 70752610538459998}
   - component: {fileID: 3329124570682783414}
+  - component: {fileID: 8526928609776350283}
+  - component: {fileID: 7817389586078516524}
   m_Layer: 0
   m_Name: BasicMinion
-  m_TagString: Untagged
+  m_TagString: AvoidMe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,14 +78,44 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8d7c5504c7af75446a48f3afcd4cc8ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68b16f6a1dde54f41b644fd0be4567c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8526928609776350283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3501717510986240449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7bcfb15433e544cad9e3daf1cd4929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goal: {fileID: 0}
+  speed: 7
+  target: enemy
+  roateSpeed: 0
+  spaceBetween: 0
+--- !u!114 &7817389586078516524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3501717510986240449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8743fb25417750242a429f7c9d0c61d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceBetween: 5

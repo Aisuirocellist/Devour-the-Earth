@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1551997187381034431}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: AvoidMe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,3 +208,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1191537186931966177, guid: d8720e51d2a629345ad76ecd2e7259b4, type: 3}
   delayTime: 0.4
   bulletSpeed: 12
+  bulletSummonOffset: 1.5
