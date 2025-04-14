@@ -51,7 +51,7 @@ public class MinionData : MonoBehaviour
 
             GameObject sticker = Instantiate(StickerPrefab);
             sticker.transform.SetParent(canvas.transform, true);
-            sticker.GetComponent<RectTransform>().localScale = Vector3.one;
+            sticker.GetComponent<RectTransform>().localScale = new Vector2(2,2);
             sticker.GetComponentInChildren<UnityEngine.UI.Image>().sprite = shipType.GetComponent<SpriteRenderer>().sprite;
 
         if (active)
@@ -77,40 +77,20 @@ public class MinionData : MonoBehaviour
         if (active)
         {
             GameObject minion = Instantiate(shipType);
-            this.transform.SetParent(minion.transform);
+            this.transform.SetParent(player.transform);
+            minion.transform.localScale = new Vector2(2, 2);
             minion.transform.position = player.transform.position;
-            minion.transform.SetParent(player.transform);
+            minion.GetComponent<BasicPathfinding>().goal = this.gameObject;
 
             minion.transform.localPosition = gameLocation;
+            this.transform.localPosition = gameLocation;
 
             minion.transform.localRotation = minionAngle;
-            this.transform.localPosition = Vector2.zero;
         }
     }
 
     public Vector2 hubToGameLocation() 
     {
-        //GameObject ship = GameObject.Find("Centerpiece");
-        //Vector2 midpoint = ship.GetComponent<RectTransform>().TransformPoint(ship.GetComponent<RectTransform>().rect.center);
-        //Vector2 minionPoint = this.GetComponentInParent<RectTransform>().TransformPoint(this.GetComponentInParent<RectTransform>().rect.center);
-
-        ////Debug.Log(midpoint);
-        ////Debug.Log(minionPoint);
-
-        //Vector2 offset = minionPoint - midpoint;
-        ////Debug.Log(offset);
-        ////Vector2 minionPosition = Camera.main.ScreenToWorldPoint(offset);
-        //Vector2 minionPosition = Camera.main.ScreenToWorldPoint(new Vector3(offset.x, offset.y, Camera.main.nearClipPlane));
-
-        //minionPosition.x += (8.891599f);
-        //minionPosition.y += (3.990846f);
-
-        //return minionPosition;
-        //////float scale = (2f * Camera.main.orthographicSize) / canvas.GetComponent<CanvasScaler>().referenceResolution.y;
-        ////GameObject ship = GameObject.Find("Centerpiece");
-        //////Vector2 offset = ((Vector2)this.transform.position - (Vector2)ship.transform.position)*scale*2f;
-        //////return offset;
-
         GameObject ship = GameObject.Find("Centerpiece");
         Vector2 midpoint = ship.GetComponent<RectTransform>().TransformPoint(ship.GetComponent<RectTransform>().rect.center);
         Vector2 minionPoint = this.GetComponentInParent<RectTransform>().TransformPoint(this.GetComponentInParent<RectTransform>().rect.center);
