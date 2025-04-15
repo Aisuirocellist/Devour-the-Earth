@@ -18,7 +18,12 @@ public class DropArea : MonoBehaviour, IDropHandler
     }
     public void OnDrop(PointerEventData eventData)
     {
+
         GameObject dropObj = eventData.pointerDrag;
+
+        if (dropObj.GetComponent<DragDrop>() == null)
+            return;
+
         DragDrop itemScript = dropObj.GetComponent<DragDrop>();
         MinionData minionDataScript = dropObj.GetComponentInChildren<MinionData>();
         //Debug.Log("OnDrop");

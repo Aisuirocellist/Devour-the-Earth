@@ -37,12 +37,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         transform.SetParent(canvas.transform, true);
     }
 
-    //public void OnDrag(PointerEventData eventData)
-    //{
-    //    //Debug.Log("OnDrag");
-    //    rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-    //}
-
     public void OnDrag(PointerEventData eventData)
     {
         Vector3 globalMousePos;
@@ -54,6 +48,9 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (GetComponent<DragDrop>() == null)
+            return;
+
         //Debug.Log("OnEndDrag");
         if (eventData.pointerEnter == null || eventData.pointerEnter.GetComponent<DropArea>() == null || overlap)
         {
