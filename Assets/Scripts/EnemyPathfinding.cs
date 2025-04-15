@@ -149,7 +149,7 @@ public class EnemyPathfinding : MonoBehaviour
                 Vector2 offset = (Vector2)(transform.position - obj.transform.position);
                 float dist = offset.magnitude;
                 if (dist > 0.01f)
-                    force += offset.normalized / dist; // weighted inverse distance
+                    force += offset.normalized / dist;
             }
         }
 

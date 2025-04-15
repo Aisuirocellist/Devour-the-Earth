@@ -954,10 +954,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.002020202
-    width: 1.0000001
-    height: 0.99393946
+    x: 0.0011441648
+    y: 0
+    width: 0.9977117
+    height: 0.99999994
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   IgnoreTimeScale: 0
   WorldUpOverride: {fileID: 0}
   ChannelMask: -1
-  UpdateMethod: 0
+  UpdateMethod: 2
   BlendUpdateMethod: 0
   LensModeOverride:
     Enabled: 0
