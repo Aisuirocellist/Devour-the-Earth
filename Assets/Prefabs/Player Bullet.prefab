@@ -107,7 +107,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 264
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -167,8 +167,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionAudio: {fileID: 8300000, guid: a7065bae17bed48ca8cf48ba9a256578, type: 3}
-  damage: 1
-  speed: 10
 --- !u!82 &6762414081750824537
 AudioSource:
   m_ObjectHideFlags: 0
