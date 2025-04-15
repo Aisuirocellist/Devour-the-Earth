@@ -99,8 +99,6 @@ public class EnemyPathfinding : MonoBehaviour
 
         Vector2 smoothedVelocity = Vector2.SmoothDamp(rb.linearVelocity, finalMove * speed, ref oldVelocity, 0.1f);
         rb.linearVelocity = smoothedVelocity;
-        //Vector2 newVeleocity = finalMove * speed;
-        //rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, finalMove * speed, 0.1f);
 
         GameObject target = FindClosestTarget();
         if (target != null)
@@ -116,10 +114,17 @@ public class EnemyPathfinding : MonoBehaviour
     Vector2 GetOrbitDirectionAroundPlayer(Vector2 center)
     {
         Vector2 toCenter = center - (Vector2)transform.position;
+        float currentDistance = toCenter.magnitude;
+
+        float distanceError = currentDistance - closeRange;
+
         Vector2 tangent = new Vector2(-toCenter.y, toCenter.x).normalized;
 
-        Vector2 spiral = (tangent + toCenter.normalized * 0.3f).normalized;
-        return spiral;
+        Vector2 radialCorrection = toCenter.normalized * (distanceError);
+
+        Vector2 adjustedDirection = (tangent + radialCorrection).normalized;
+
+        return adjustedDirection;
     }
     Vector2 GetOrbitDirectionAroundEarth(Vector2 center)
     {
