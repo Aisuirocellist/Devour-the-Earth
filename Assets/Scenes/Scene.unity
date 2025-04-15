@@ -1147,12 +1147,20 @@ PrefabInstance:
       value: PlayerHealthBar
       objectReference: {fileID: 0}
     - target: {fileID: 7619766828719783401, guid: 353b69afc1c0e45f49a1e2856c95a7d7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619766828719783401, guid: 353b69afc1c0e45f49a1e2856c95a7d7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619766828719783401, guid: 353b69afc1c0e45f49a1e2856c95a7d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7619766828719783401, guid: 353b69afc1c0e45f49a1e2856c95a7d7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7619766828719783401, guid: 353b69afc1c0e45f49a1e2856c95a7d7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1680,10 +1688,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.001447178
+    x: 0
     y: 0
-    width: 2.6628075
-    height: 1.5604076
+    width: 1
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
