@@ -28,7 +28,11 @@ public class EnemyPathfinding : MonoBehaviour
     private Vector2 oldVelocity = Vector2.zero;
     private Vector2 orbitCenter = new Vector2(20, 10);
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
+
+    private Collider2D playerFar;
+    private Collider2D playerClose;
+
     private Collider2D[] nearMe;
     private Collider2D[] inVeiw;
 
@@ -112,13 +116,17 @@ public class EnemyPathfinding : MonoBehaviour
         {
             Vector2 angleDirection = target.transform.position - transform.position;
             float targetAngle = Mathf.Atan2(angleDirection.y, angleDirection.x) * Mathf.Rad2Deg - 90f;
+
             targetRotation = Quaternion.Euler(0, 0, targetAngle);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 5f);
         }
         else
         {
             Vector2 angleDirection = orbitCenter - (Vector2)transform.position;
-            float targetAngle = Mathf.Atan2(angleDirection.y, angleDirection.x) * Mathf.Rad2Deg + 90f;
-            targetRotation = Quaternion.Euler(0, 0, targetAngle);
+            float targetAngle = Mathf.Atan2(angleDirection.y, angleDirection.x) * Mathf.Rad2Deg - 90f;
+
+            targetRotation = Quaternion.Euler(0, 0, targetAngle + 180);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 5f);
         }
 
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 5f);
@@ -142,7 +150,7 @@ public class EnemyPathfinding : MonoBehaviour
 
     Vector2 GetOrbitDirectionAroundEarth(Vector2 center)
     {
-        Vector2 toCenter = center - (Vector2) transform.position;
+        Vector2 toCenter = center - (Vector2)transform.position;
 
         float currentDistance = toCenter.magnitude;
         float distanceError = currentDistance - earthOrbitRadius;
@@ -191,14 +199,13 @@ public class EnemyPathfinding : MonoBehaviour
                 }
             }
         }
-
         return closest;
     }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, idleRange);
-        Gizmos.DrawWireSphere(transform.position, chaseRange); 
+        Gizmos.DrawWireSphere(transform.position, chaseRange);
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.DrawWireSphere(transform.position, viewRange);
         Gizmos.DrawWireSphere(transform.position, closeRange);

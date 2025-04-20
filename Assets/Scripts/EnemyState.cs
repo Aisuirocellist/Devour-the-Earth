@@ -29,7 +29,10 @@ public class EnemyState : State
         if (!IsAlive())
         {
             GetComponent<DeathScript>().assimilate();
-            Destroy(gameObject);
+            if (this.transform.parent != null)
+                Destroy(this.transform.parent.gameObject);
+            else
+                Destroy(gameObject);
         }
 
         sr.color = Color.white;

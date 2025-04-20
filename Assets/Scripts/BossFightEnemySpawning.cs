@@ -48,12 +48,13 @@ public class BossFightEnemySpawning : MonoBehaviour
 
     private float relitiveEarthHealth;
     private System.Random rand;
-    private bool readlyToSpawn = true;
+    public bool readlyToSpawn = true;
 
     void Start()
     {
         earthState = GetComponent<EarthState>();
         rand = new System.Random();
+        readlyToSpawn = true;
     }
 
     void Update()
@@ -115,17 +116,19 @@ public class BossFightEnemySpawning : MonoBehaviour
 
         for (int i = 0; i < randCount; i++)
         {
-            GameObject newEnemy = Instantiate(randEnemy.prefab);
+            GameObject newEnemy = new GameObject();
+            newEnemy = Instantiate(randEnemy.prefab);
+            newEnemy.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - 1);
             yield return null; // Wait one frame so Awake/Start can run
 
-            newEnemy.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - 1);
-            EnemyPathfinding enemyPathfinding = newEnemy.GetComponent<EnemyPathfinding>();
+            EnemyPathfinding enemyPathfinding = newEnemy.GetComponentInChildren<EnemyPathfinding>();
             enemyPathfinding.earthOrbitRadius = randOrbit;
             yield return new WaitForSeconds(waitTimeForEqualOrbit(randOrbit, randCount, enemyPathfinding.idleSpeed));
         }
         float randWait = rand.Next(timeBetween[phase].min, timeBetween[phase].max);
         StartCoroutine(Wait(randWait));
         readlyToSpawn = true;
+        Debug.Log("SpawnEnemy");
     }
 
     public float waitTimeForEqualOrbit(int radius, int count, float speed)
