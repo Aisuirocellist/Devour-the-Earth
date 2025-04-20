@@ -201,10 +201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f5ea74497c7ea4885dfb18619f1dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerObject: {fileID: 0}
-  closeRange: 5
-  idleRange: 10
-  chaceRange: 12
+  closeRange: 7
+  idleRange: 25
+  chaceRange: 20
   separationRadius: 2
   separationStrength: 1
   chaseSpeed: 7

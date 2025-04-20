@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyPathfinding : MonoBehaviour
 {
     enum EnemyState { Idle, Chase, Close }
-    EnemyState currentState;
+    EnemyState currentState = EnemyState.Idle;
 
     Transform player;
     Transform centerObject;
@@ -47,6 +47,8 @@ public class EnemyPathfinding : MonoBehaviour
         bool inClose = Physics2D.OverlapCircle(transform.position, closeRange, playerLayer);
         bool inEnterChase = Physics2D.OverlapCircle(transform.position, chaceRange, playerLayer);
         bool inExitChase = Physics2D.OverlapCircle(transform.position, idleRange, playerLayer);
+
+        Debug.Log(currentState);
 
         switch (currentState)
         {
@@ -128,15 +130,13 @@ public class EnemyPathfinding : MonoBehaviour
 
     Vector2 GetOrbitDirectionAroundEarth(Vector2 center)
     {
-        Vector2 toCenter = center - (Vector2)transform.position;
-        float currentDistance = toCenter.magnitude;
+        Vector2 toCenter = center - (Vector2) transform.position;
 
+        float currentDistance = toCenter.magnitude;
         float distanceError = currentDistance - earthOrbitRadius;
 
         Vector2 tangent = new Vector2(-toCenter.y, toCenter.x).normalized;
-
         Vector2 radialCorrection = toCenter.normalized * (distanceError);
-
         Vector2 adjustedDirection = (tangent + radialCorrection).normalized;
 
         return adjustedDirection;
