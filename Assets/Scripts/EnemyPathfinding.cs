@@ -12,7 +12,10 @@ public class EnemyPathfinding : MonoBehaviour
     private float farRange;
     public float closeRange;
     public float idleRange;
-    public float chaceRange;
+    public float chaseRange;
+
+    public float attackRange;
+    public float viewRange;
 
     public float separationRadius;
     public float separationStrength;
@@ -23,12 +26,15 @@ public class EnemyPathfinding : MonoBehaviour
     public int earthOrbitRadius;
 
     private Vector2 oldVelocity = Vector2.zero;
+    private Vector2 orbitCenter = new Vector2(20, 10);
 
     private Rigidbody2D rb;
     private Collider2D[] nearMe;
+    private Collider2D[] inVeiw;
 
     public LayerMask playerLayer;
     public LayerMask avoidLayer;
+    public LayerMask shootAtLayer;
 
     private void Start()
     {
@@ -39,14 +45,15 @@ public class EnemyPathfinding : MonoBehaviour
         if (earthObj != null) centerObject = earthObj.transform;
 
         rb = GetComponent<Rigidbody2D>();
-        farRange = chaceRange;
+        farRange = chaseRange;
+        chaseRange = attackRange + 2;
     }
 
     void FixedUpdate()
     {
         bool inClose = Physics2D.OverlapCircle(transform.position, closeRange, playerLayer);
-        bool inEnterChase = Physics2D.OverlapCircle(transform.position, chaceRange, playerLayer);
-        bool inExitChase = Physics2D.OverlapCircle(transform.position, idleRange, playerLayer);
+        bool inEnterChase = Physics2D.OverlapCircle(transform.position, chaseRange, playerLayer);
+        bool inExitChase = Physics2D.OverlapCircle(transform.position, attackRange, playerLayer);
 
         switch (currentState)
         {
@@ -75,12 +82,12 @@ public class EnemyPathfinding : MonoBehaviour
         switch (currentState)
         {
             case EnemyState.Idle:
-                farRange = idleRange;
+                farRange = attackRange;
                 moveDir = GetOrbitDirectionAroundEarth(centerObject.position);
                 speed = idleSpeed;
                 break;
             case EnemyState.Chase:
-                farRange = chaceRange;
+                farRange = chaseRange;
                 moveDir = (player.position - transform.position).normalized;
                 speed = chaseSpeed;
                 break;
@@ -99,15 +106,22 @@ public class EnemyPathfinding : MonoBehaviour
         rb.linearVelocity = smoothedVelocity;
 
         GameObject target = FindClosestTarget();
+        Quaternion targetRotation;
 
         if (target != null)
         {
             Vector2 angleDirection = target.transform.position - transform.position;
             float targetAngle = Mathf.Atan2(angleDirection.y, angleDirection.x) * Mathf.Rad2Deg - 90f;
-
-            Quaternion targetRotation = Quaternion.Euler(0, 0, targetAngle);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 5f);
+            targetRotation = Quaternion.Euler(0, 0, targetAngle);
         }
+        else
+        {
+            Vector2 angleDirection = orbitCenter - (Vector2)transform.position;
+            float targetAngle = Mathf.Atan2(angleDirection.y, angleDirection.x) * Mathf.Rad2Deg + 90f;
+            targetRotation = Quaternion.Euler(0, 0, targetAngle);
+        }
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 5f);
     }
 
     Vector2 GetOrbitDirectionAroundPlayer(Vector2 center)
@@ -159,37 +173,15 @@ public class EnemyPathfinding : MonoBehaviour
         return force * separationStrength;
     }
 
-
-    float GetColliderRadius(Collider2D col)
-    {
-        if (col is CircleCollider2D circle)
-        {
-            return circle.radius * Mathf.Max(col.transform.lossyScale.x, col.transform.lossyScale.y);
-        }
-        else
-        {
-            return col.bounds.extents.magnitude;
-        }
-    }
-
     GameObject FindClosestTarget()
     {
+        inVeiw = Physics2D.OverlapCircleAll(transform.position, viewRange, shootAtLayer);
         GameObject closest = null;
-        float shortestDistance = farRange;
+        float shortestDistance = viewRange;
 
-        if (player != null)
+        foreach (Collider2D obj in inVeiw)
         {
-            float dist = Vector2.Distance(transform.position, player.position);
-            if (dist < shortestDistance)
-            {
-                shortestDistance = dist;
-                closest = player.gameObject;
-            }
-        }
-
-        foreach (Collider2D obj in nearMe)
-        {
-            if (obj.CompareTag("minion"))
+            if (obj.CompareTag("minion") || obj.CompareTag("Player"))
             {
                 float dist = Vector2.Distance(transform.position, obj.transform.position);
                 if (dist < shortestDistance)
@@ -206,13 +198,15 @@ public class EnemyPathfinding : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, idleRange);
-        Gizmos.DrawWireSphere(transform.position, chaceRange);
+        Gizmos.DrawWireSphere(transform.position, chaseRange); 
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(transform.position, viewRange);
         Gizmos.DrawWireSphere(transform.position, closeRange);
         Gizmos.DrawWireSphere(transform.position, separationRadius);
     }
 
     public bool IsOnFight()
     {
-        return currentState != EnemyState.Idle;
+        return inVeiw.Length > 0;
     }
 }
