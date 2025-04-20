@@ -82,20 +82,22 @@ public class BossFightEnemySpawning : MonoBehaviour
             phase = 4;
         }
         
-        if(readlyToSpawn)
-        StartCoroutine(SpawnEnemy());
+        if (readlyToSpawn)
+            StartCoroutine(SpawnEnemy());
     }
 
     IEnumerator Wait(float seconds)
     {
         yield return new WaitForSeconds(seconds);
     }
+
     IEnumerator SpawnEnemy()
     {
         readlyToSpawn = false;
         int wightTotal = dificultyWight[phase].easy + dificultyWight[phase].medium + dificultyWight[phase].hard;
         int randDificulty = rand.Next(0, wightTotal);
         List<Enemy> enemies;
+
         if (randDificulty < dificultyWight[phase].easy)
         {
             enemies = phaseEnemyOptions[phase].easyEnemys;
@@ -125,10 +127,10 @@ public class BossFightEnemySpawning : MonoBehaviour
             enemyPathfinding.earthOrbitRadius = randOrbit;
             yield return new WaitForSeconds(waitTimeForEqualOrbit(randOrbit, randCount, enemyPathfinding.idleSpeed));
         }
+
         float randWait = rand.Next(timeBetween[phase].min, timeBetween[phase].max);
         StartCoroutine(Wait(randWait));
         readlyToSpawn = true;
-        Debug.Log("SpawnEnemy");
     }
 
     public float waitTimeForEqualOrbit(int radius, int count, float speed)

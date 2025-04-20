@@ -207,6 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeRange: 5
+  idleRange: 20
+  chaseRange: 15
   attackRange: 10
   viewRange: 10
   separationRadius: 2
@@ -215,10 +217,6 @@ MonoBehaviour:
   lingerSpeed: 5
   idleSpeed: 10
   earthOrbitRadius: 15
-  rb: {fileID: 1174237487863420829}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 256
   avoidLayer:
     serializedVersion: 2
     m_Bits: 3584
@@ -238,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionParticle: {fileID: 3557155110858833212, guid: e066746fd7b9cb249b0d88aea9752083, type: 3}
-  maxLaunchSpeed: 15
+  maxLaunchSpeed: 23
   accelRate: 7
   autoDestructionTime: 1
   explosionRadius: 3

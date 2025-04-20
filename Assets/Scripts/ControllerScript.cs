@@ -17,7 +17,6 @@ public class ControllerScript : MonoBehaviour
         catch (Exception e)
         {
             Debug.Log(e);
-            // do nothing
         }
     }
 

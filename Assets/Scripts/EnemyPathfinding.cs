@@ -28,15 +28,14 @@ public class EnemyPathfinding : MonoBehaviour
     private Vector2 oldVelocity = Vector2.zero;
     private Vector2 orbitCenter = new Vector2(20, 10);
 
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     private Collider2D playerFar;
     private Collider2D playerClose;
 
     private Collider2D[] nearMe;
-    private Collider2D[] inVeiw;
+    private Collider2D[] inView;
 
-    public LayerMask playerLayer;
     public LayerMask avoidLayer;
     public LayerMask shootAtLayer;
 
@@ -55,9 +54,9 @@ public class EnemyPathfinding : MonoBehaviour
 
     void FixedUpdate()
     {
-        bool inClose = Physics2D.OverlapCircle(transform.position, closeRange, playerLayer);
-        bool inEnterChase = Physics2D.OverlapCircle(transform.position, chaseRange, playerLayer);
-        bool inExitChase = Physics2D.OverlapCircle(transform.position, attackRange, playerLayer);
+        bool inClose = Physics2D.OverlapCircle(transform.position, closeRange, shootAtLayer);
+        bool inEnterChase = Physics2D.OverlapCircle(transform.position, chaseRange, shootAtLayer);
+        bool inExitChase = Physics2D.OverlapCircle(transform.position, attackRange, shootAtLayer);
 
         switch (currentState)
         {
@@ -116,17 +115,13 @@ public class EnemyPathfinding : MonoBehaviour
         {
             Vector2 angleDirection = target.transform.position - transform.position;
             float targetAngle = Mathf.Atan2(angleDirection.y, angleDirection.x) * Mathf.Rad2Deg - 90f;
-
             targetRotation = Quaternion.Euler(0, 0, targetAngle);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 5f);
         }
         else
         {
             Vector2 angleDirection = orbitCenter - (Vector2)transform.position;
-            float targetAngle = Mathf.Atan2(angleDirection.y, angleDirection.x) * Mathf.Rad2Deg - 90f;
-
-            targetRotation = Quaternion.Euler(0, 0, targetAngle + 180);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 5f);
+            float targetAngle = Mathf.Atan2(angleDirection.y, angleDirection.x) * Mathf.Rad2Deg + 90f;
+            targetRotation = Quaternion.Euler(0, 0, targetAngle);
         }
 
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 5f);
@@ -183,11 +178,11 @@ public class EnemyPathfinding : MonoBehaviour
 
     GameObject FindClosestTarget()
     {
-        inVeiw = Physics2D.OverlapCircleAll(transform.position, viewRange, shootAtLayer);
+        inView = Physics2D.OverlapCircleAll(transform.position, viewRange, shootAtLayer);
         GameObject closest = null;
         float shortestDistance = viewRange;
 
-        foreach (Collider2D obj in inVeiw)
+        foreach (Collider2D obj in inView)
         {
             if (obj.CompareTag("minion") || obj.CompareTag("Player"))
             {
@@ -214,6 +209,6 @@ public class EnemyPathfinding : MonoBehaviour
 
     public bool IsOnFight()
     {
-        return inVeiw.Length > 0;
+        return inView != null && inView.Length > 0;
     }
 }

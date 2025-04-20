@@ -15,7 +15,6 @@ public abstract class State : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         health -= damage;
-        Debug.Log(this.name + " health is:" + health);
     }
 
     public virtual void GainHealth(float gain)
