@@ -40,10 +40,10 @@ public class EarthState : State
             
         } else if (GetHealth() < 60) // STAGE 4
         {
-            Instantiate(Spawner3);
+            //Instantiate(Spawner3);
         } else if (GetHealth() < 80) // STAGE 3
         {
-            Instantiate(Spawner2);
+            //Instantiate(Spawner2);
         } else if (GetHealth() < 95) // STAGE 2
         {
 
