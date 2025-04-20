@@ -68,16 +68,19 @@ public class EnemyPathfinding : MonoBehaviour
             case EnemyState.Chase:
                 if (inClose)
                     currentState = EnemyState.Close;
-                else if (!inExitChase || player == null)
+                else if (!inExitChase)
                     currentState = EnemyState.Idle;
                 break;
 
             case EnemyState.Close:
                 if (!inClose)
                     currentState = EnemyState.Chase;
-                else if (player == null)
-                    currentState = EnemyState.Idle;
                 break;
+        }
+
+        if (player == null)
+        {
+            currentState = EnemyState.Idle;
         }
 
         Vector2 moveDir = Vector2.zero;
@@ -95,10 +98,10 @@ public class EnemyPathfinding : MonoBehaviour
                 speed = chaseSpeed;
                 break;
             case EnemyState.Close:
-                speed = lingerSpeed;
                 Vector2 orbit = GetOrbitDirectionAroundPlayer(player.position);
                 Vector2 idleDrift = Random.insideUnitCircle * 0.2f;
                 moveDir = (orbit + idleDrift).normalized;
+                speed = lingerSpeed;
                 break;
         }
 
