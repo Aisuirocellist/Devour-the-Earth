@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 6534857366728246793}
   - component: {fileID: 8262507913825281127}
   m_Layer: 10
-  m_Name: Basic Enemy
+  m_Name: D Bullet Enemy 1
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a7ebfef3a06601a4caa34ee66e631c1e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.98149514, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -201,12 +201,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f5ea74497c7ea4885dfb18619f1dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closeRange: 5
-  attackRange: 10
+  closeRange: 0
+  attackRange: 0
   viewRange: 10
   separationRadius: 2
   separationStrength: 1
-  chaseSpeed: 7
+  chaseSpeed: 0
   lingerSpeed: 5
   idleSpeed: 10
   earthOrbitRadius: 15

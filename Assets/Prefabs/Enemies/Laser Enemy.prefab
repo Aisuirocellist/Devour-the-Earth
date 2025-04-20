@@ -163,7 +163,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -316,8 +316,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeRange: 5
-  idleRange: 10
-  chaceRange: 12
+  attackRange: 0
+  viewRange: 0
   separationRadius: 2
   separationStrength: 1
   chaseSpeed: 7
@@ -330,7 +330,10 @@ MonoBehaviour:
     m_Bits: 256
   avoidLayer:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 3840
+  shootAtLayer:
+    serializedVersion: 2
+    m_Bits: 768
 --- !u!114 &2680794450249847207
 MonoBehaviour:
   m_ObjectHideFlags: 0

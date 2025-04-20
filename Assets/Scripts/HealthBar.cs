@@ -28,7 +28,7 @@ public class HealthBar : MonoBehaviour
         health = script.GetHealth();
         maxHealth = script.startingHealth;
         healthNormalize = health / maxHealth * 100;
-        Debug.Log("health is: " + healthNormalize);
+        //Debug.Log("health is: " + healthNormalize);
         if(s5 == null) {
             if(healthNormalize < 20) {
                 sr.sprite = s4;
