@@ -25,6 +25,8 @@ public class AIBulletSkill : BulletSkill
 
     protected override bool IsSkillUseTriggered()
     {
+        if (enemyPathfinding == null)
+            return false;
         return enemyPathfinding.IsOnFight() && base.IsSkillUseTriggered();
     }
 }
