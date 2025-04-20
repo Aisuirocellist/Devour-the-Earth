@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 368997901}
   - component: {fileID: 368997900}
   - component: {fileID: 368997902}
+  - component: {fileID: 368997903}
   m_Layer: 0
   m_Name: Scene Controller
   m_TagString: Untagged
@@ -294,6 +295,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &368997903
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368997899}
+  m_Enabled: 1
 --- !u!1 &375033177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,14 +1379,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4264700071705174372, guid: 034cf872971e01f42b9bafc2246ab811, type: 3}
   m_PrefabInstance: {fileID: 6255903427949893121}
   m_PrefabAsset: {fileID: 0}
---- !u!81 &1412542209
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 488659087}
-  m_Enabled: 1
 --- !u!114 &1412542210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2781,9 +2782,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2314615131601612935, guid: 034cf872971e01f42b9bafc2246ab811, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1412542209}
     - targetCorrespondingSourceObject: {fileID: 2314615131601612935, guid: 034cf872971e01f42b9bafc2246ab811, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1412542210}
