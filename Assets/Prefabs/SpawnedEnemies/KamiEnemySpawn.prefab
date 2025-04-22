@@ -111,6 +111,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6375412643699704733}
     m_Modifications:
+    - target: {fileID: -4134114914299604125, guid: 9955a36ab58458b4db6d23e3f756ef87, type: 3}
+      propertyPath: minionType
+      value: 
+      objectReference: {fileID: 5082064056509682292, guid: 06c992a6b2ca04aee874c7a05e131d19, type: 3}
     - target: {fileID: 3218638885459967150, guid: 9955a36ab58458b4db6d23e3f756ef87, type: 3}
       propertyPath: m_Name
       value: Kamikaze Enemy
