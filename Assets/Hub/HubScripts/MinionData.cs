@@ -74,7 +74,6 @@ public class MinionData : MonoBehaviour
     private void gameSetup() 
     {
             player = GameObject.Find("Player");
-        Debug.Log("AAA");
         if (active)
         {
             GameObject minion = Instantiate(shipType);
