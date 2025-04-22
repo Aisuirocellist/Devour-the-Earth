@@ -40,13 +40,13 @@ public class BossFightEnemySpawning : MonoBehaviour
         public int hard;
     }
 
+    public int totalPhase;
     public List<EnemyLevels> phaseEnemyOptions;
-    public int phase;
     public EarthState earthState;
     public TimeRange[] timeBetween;
     public DifficultyWeight[] dificultyWight;
 
-    private float relitiveEarthHealth;
+    private int phase;
     private System.Random rand;
     public bool readlyToSpawn = true;
 
@@ -55,33 +55,18 @@ public class BossFightEnemySpawning : MonoBehaviour
         earthState = GetComponent<EarthState>();
         rand = new System.Random();
         readlyToSpawn = true;
+        phase = 0;
     }
 
     void Update()
     {
-        relitiveEarthHealth = (earthState.GetHealth() / earthState.startingHealth)*100;
+        float relativeEarthHealth = (earthState.GetHealth() / earthState.startingHealth) * 100;
 
-        if (relitiveEarthHealth >= 80)
+        while (relativeEarthHealth <= 100f - 100f / totalPhase * (phase + 1))
         {
-            phase = 0;
+            phase++;
         }
-        else if (relitiveEarthHealth >= 60)
-        {
-            phase = 1;
-        }
-        else if (relitiveEarthHealth >= 40)
-        {
-            phase = 2;
-        }
-        else if (relitiveEarthHealth >= 20)
-        {
-            phase = 3;
-        }
-        else 
-        {
-            phase = 4;
-        }
-        
+
         if (readlyToSpawn)
             StartCoroutine(SpawnEnemy());
     }
@@ -113,7 +98,6 @@ public class BossFightEnemySpawning : MonoBehaviour
 
         Enemy randEnemy = enemies[rand.Next(0, enemies.Count)];
         int randCount = rand.Next(randEnemy.spawnAmountLowBound,randEnemy.spawnAmountHighBound+1);
-
         int randOrbit = rand.Next(randEnemy.orbitLowBound, randEnemy.orbitHighBound+1);
 
         for (int i = 0; i < randCount; i++)
