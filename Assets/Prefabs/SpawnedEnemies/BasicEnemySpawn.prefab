@@ -61,6 +61,10 @@ PrefabInstance:
       propertyPath: earthOrbitRadius
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: -4134114914299604125, guid: 0a57e123ff0f3514b989700c743efe7f, type: 3}
+      propertyPath: minionType
+      value: 
+      objectReference: {fileID: 624422218974023433, guid: 7f6c557023c7f471ab8ecf632f63a76c, type: 3}
     - target: {fileID: 3218638885459967150, guid: 0a57e123ff0f3514b989700c743efe7f, type: 3}
       propertyPath: m_Name
       value: BasicEnemy

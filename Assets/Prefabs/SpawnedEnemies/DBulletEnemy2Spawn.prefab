@@ -41,6 +41,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 109317492305671538}
     m_Modifications:
+    - target: {fileID: -4134114914299604125, guid: c6940ea1b20d13e4c8f9a31ca74476f8, type: 3}
+      propertyPath: minionType
+      value: 
+      objectReference: {fileID: 4163834173411195793, guid: 5a62d5f8410ac4abaa27d1c0a9604ac7, type: 3}
     - target: {fileID: 3218638885459967150, guid: c6940ea1b20d13e4c8f9a31ca74476f8, type: 3}
       propertyPath: m_Name
       value: D Bullet Enemy 2
