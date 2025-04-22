@@ -33,7 +33,8 @@ Transform:
   m_LocalPosition: {x: -4.3889, y: 1.531, z: -0.03635319}
   m_LocalScale: {x: 10, y: 10, z: 3.9999998}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 5278952315525858273}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1850261463847516070
@@ -140,9 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
-  hitColor: {r: 1, g: 0, b: 0, a: 0.29411766}
-  Spawner2: {fileID: 4401584833860554585, guid: eb915a09811254ea1b50b9525d75fdcf, type: 3}
-  Spawner3: {fileID: 3846292011677526000, guid: 307f91ea1fd4445f88de0c20674ac2f1, type: 3}
+  hitColor: {r: 1, g: 0, b: 0, a: 0.39607844}
 --- !u!114 &6027410158107701521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29cd920b93dcfe4da58709539b1b85a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desplayRadius: 20
+  desplayRadius: 15
 --- !u!114 &7190358900932469544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,194 +167,84 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 995b7a75a881ea042ac416eedd564e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalPhase: 3
   phaseEnemyOptions:
   - easyEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: ecd899d4a36b2044daf13a300f29c09f, type: 3}
+    - prefab: {fileID: 730736319650993459, guid: 5250793f0c2b3de468170b90264a64a7, type: 3}
       orbitHighBound: 20
-      orbitLowBound: 10
-      spawnAmountHighBound: 10
+      orbitLowBound: 15
+      spawnAmountHighBound: 4
       spawnAmountLowBound: 3
-    mediumEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: c6940ea1b20d13e4c8f9a31ca74476f8, type: 3}
+    - prefab: {fileID: 730736319650993459, guid: 5250793f0c2b3de468170b90264a64a7, type: 3}
       orbitHighBound: 20
-      orbitLowBound: 10
+      orbitLowBound: 15
+      spawnAmountHighBound: 10
+      spawnAmountLowBound: 5
+    mediumEnemys:
+    - prefab: {fileID: 730736319650993459, guid: 890894dcee4da3d4f876a7fef16ae23a, type: 3}
+      orbitHighBound: 20
+      orbitLowBound: 15
       spawnAmountHighBound: 5
-      spawnAmountLowBound: 2
+      spawnAmountLowBound: 4
+    - prefab: {fileID: 730736319650993459, guid: 890894dcee4da3d4f876a7fef16ae23a, type: 3}
+      orbitHighBound: 20
+      orbitLowBound: 15
+      spawnAmountHighBound: 5
+      spawnAmountLowBound: 4
     hardEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: 0a57e123ff0f3514b989700c743efe7f, type: 3}
-      orbitHighBound: 25
+    - prefab: {fileID: 730736319650993459, guid: 9b724821663f04e31bb9def86082b38b, type: 3}
+      orbitHighBound: 20
+      orbitLowBound: 15
+      spawnAmountHighBound: 6
+      spawnAmountLowBound: 5
+  - easyEnemys:
+    - prefab: {fileID: 4078281686942072444, guid: f679cb02a25124ea0b1fb4a0931a4482, type: 3}
+      orbitHighBound: 30
+      orbitLowBound: 20
+      spawnAmountHighBound: 3
+      spawnAmountLowBound: 2
+    mediumEnemys:
+    - prefab: {fileID: 4078281686942072444, guid: f679cb02a25124ea0b1fb4a0931a4482, type: 3}
+      orbitHighBound: 30
+      orbitLowBound: 20
+      spawnAmountHighBound: 4
+      spawnAmountLowBound: 3
+    hardEnemys:
+    - prefab: {fileID: 4078281686942072444, guid: f679cb02a25124ea0b1fb4a0931a4482, type: 3}
+      orbitHighBound: 30
+      orbitLowBound: 20
+      spawnAmountHighBound: 5
+      spawnAmountLowBound: 4
+  - easyEnemys:
+    - prefab: {fileID: 8797427769457703808, guid: af349ee12335347b6be4fa89ae70bd6c, type: 3}
+      orbitHighBound: 15
       orbitLowBound: 10
       spawnAmountHighBound: 3
-      spawnAmountLowBound: 1
-  - easyEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: ecd899d4a36b2044daf13a300f29c09f, type: 3}
-      orbitHighBound: 20
-      orbitLowBound: 10
-      spawnAmountHighBound: 10
-      spawnAmountLowBound: 3
-    - prefab: {fileID: 3218638885459967150, guid: c6940ea1b20d13e4c8f9a31ca74476f8, type: 3}
-      orbitHighBound: 20
+      spawnAmountLowBound: 2
+    mediumEnemys:
+    - prefab: {fileID: 8797427769457703808, guid: af349ee12335347b6be4fa89ae70bd6c, type: 3}
+      orbitHighBound: 15
       orbitLowBound: 10
       spawnAmountHighBound: 4
-      spawnAmountLowBound: 2
-    mediumEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: c6940ea1b20d13e4c8f9a31ca74476f8, type: 3}
-      orbitHighBound: 20
+      spawnAmountLowBound: 3
+    hardEnemys:
+    - prefab: {fileID: 8797427769457703808, guid: af349ee12335347b6be4fa89ae70bd6c, type: 3}
+      orbitHighBound: 15
       orbitLowBound: 10
-      spawnAmountHighBound: 6
+      spawnAmountHighBound: 5
       spawnAmountLowBound: 4
-    - prefab: {fileID: 3218638885459967150, guid: 0a57e123ff0f3514b989700c743efe7f, type: 3}
-      orbitHighBound: 25
-      orbitLowBound: 10
-      spawnAmountHighBound: 2
-      spawnAmountLowBound: 1
-    hardEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: 0a57e123ff0f3514b989700c743efe7f, type: 3}
-      orbitHighBound: 25
-      orbitLowBound: 10
-      spawnAmountHighBound: 5
-      spawnAmountLowBound: 2
-    - prefab: {fileID: 3218638885459967150, guid: 9955a36ab58458b4db6d23e3f756ef87, type: 3}
-      orbitHighBound: 25
-      orbitLowBound: 10
-      spawnAmountHighBound: 3
-      spawnAmountLowBound: 1
-  - easyEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: ecd899d4a36b2044daf13a300f29c09f, type: 3}
-      orbitHighBound: 20
-      orbitLowBound: 10
-      spawnAmountHighBound: 10
-      spawnAmountLowBound: 3
-    - prefab: {fileID: 3218638885459967150, guid: c6940ea1b20d13e4c8f9a31ca74476f8, type: 3}
-      orbitHighBound: 20
-      orbitLowBound: 10
-      spawnAmountHighBound: 4
-      spawnAmountLowBound: 2
-    - prefab: {fileID: 3218638885459967150, guid: 0a57e123ff0f3514b989700c743efe7f, type: 3}
-      orbitHighBound: 20
-      orbitLowBound: 10
-      spawnAmountHighBound: 2
-      spawnAmountLowBound: 1
-    mediumEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: 0a57e123ff0f3514b989700c743efe7f, type: 3}
-      orbitHighBound: 25
-      orbitLowBound: 10
-      spawnAmountHighBound: 6
-      spawnAmountLowBound: 4
-    - prefab: {fileID: 3218638885459967150, guid: 9955a36ab58458b4db6d23e3f756ef87, type: 3}
-      orbitHighBound: 25
-      orbitLowBound: 10
-      spawnAmountHighBound: 2
-      spawnAmountLowBound: 1
-    hardEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: 9955a36ab58458b4db6d23e3f756ef87, type: 3}
-      orbitHighBound: 25
-      orbitLowBound: 10
-      spawnAmountHighBound: 5
-      spawnAmountLowBound: 3
-    - prefab: {fileID: 530195350152991745, guid: ca91cc4d757c44bf79dea38f627ed363, type: 3}
-      orbitHighBound: 15
-      orbitLowBound: 10
-      spawnAmountHighBound: 2
-      spawnAmountLowBound: 1
-  - easyEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: c6940ea1b20d13e4c8f9a31ca74476f8, type: 3}
-      orbitHighBound: 20
-      orbitLowBound: 10
-      spawnAmountHighBound: 10
-      spawnAmountLowBound: 5
-    - prefab: {fileID: 3218638885459967150, guid: 0a57e123ff0f3514b989700c743efe7f, type: 3}
-      orbitHighBound: 20
-      orbitLowBound: 10
-      spawnAmountHighBound: 5
-      spawnAmountLowBound: 2
-    - prefab: {fileID: 3218638885459967150, guid: 9955a36ab58458b4db6d23e3f756ef87, type: 3}
-      orbitHighBound: 15
-      orbitLowBound: 10
-      spawnAmountHighBound: 5
-      spawnAmountLowBound: 2
-    mediumEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: 0a57e123ff0f3514b989700c743efe7f, type: 3}
-      orbitHighBound: 25
-      orbitLowBound: 10
-      spawnAmountHighBound: 5
-      spawnAmountLowBound: 3
-    - prefab: {fileID: 3218638885459967150, guid: 9955a36ab58458b4db6d23e3f756ef87, type: 3}
-      orbitHighBound: 15
-      orbitLowBound: 10
-      spawnAmountHighBound: 8
-      spawnAmountLowBound: 5
-    hardEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: 9955a36ab58458b4db6d23e3f756ef87, type: 3}
-      orbitHighBound: 25
-      orbitLowBound: 10
-      spawnAmountHighBound: 10
-      spawnAmountLowBound: 6
-    - prefab: {fileID: 530195350152991745, guid: ca91cc4d757c44bf79dea38f627ed363, type: 3}
-      orbitHighBound: 25
-      orbitLowBound: 10
-      spawnAmountHighBound: 5
-      spawnAmountLowBound: 3
-  - easyEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: c6940ea1b20d13e4c8f9a31ca74476f8, type: 3}
-      orbitHighBound: 20
-      orbitLowBound: 10
-      spawnAmountHighBound: 10
-      spawnAmountLowBound: 5
-    - prefab: {fileID: 3218638885459967150, guid: 0a57e123ff0f3514b989700c743efe7f, type: 3}
-      orbitHighBound: 20
-      orbitLowBound: 10
-      spawnAmountHighBound: 6
-      spawnAmountLowBound: 5
-    - prefab: {fileID: 3218638885459967150, guid: 9955a36ab58458b4db6d23e3f756ef87, type: 3}
-      orbitHighBound: 15
-      orbitLowBound: 10
-      spawnAmountHighBound: 10
-      spawnAmountLowBound: 5
-    mediumEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: 0a57e123ff0f3514b989700c743efe7f, type: 3}
-      orbitHighBound: 25
-      orbitLowBound: 10
-      spawnAmountHighBound: 10
-      spawnAmountLowBound: 6
-    - prefab: {fileID: 3218638885459967150, guid: 9955a36ab58458b4db6d23e3f756ef87, type: 3}
-      orbitHighBound: 15
-      orbitLowBound: 10
-      spawnAmountHighBound: 12
-      spawnAmountLowBound: 10
-    - prefab: {fileID: 530195350152991745, guid: ca91cc4d757c44bf79dea38f627ed363, type: 3}
-      orbitHighBound: 15
-      orbitLowBound: 10
-      spawnAmountHighBound: 3
-      spawnAmountLowBound: 1
-    hardEnemys:
-    - prefab: {fileID: 3218638885459967150, guid: 9955a36ab58458b4db6d23e3f756ef87, type: 3}
-      orbitHighBound: 25
-      orbitLowBound: 10
-      spawnAmountHighBound: 15
-      spawnAmountLowBound: 10
-    - prefab: {fileID: 530195350152991745, guid: ca91cc4d757c44bf79dea38f627ed363, type: 3}
-      orbitHighBound: 25
-      orbitLowBound: 10
-      spawnAmountHighBound: 6
-      spawnAmountLowBound: 5
-  phase: 0
   earthState: {fileID: 5299533153568340076}
   timeBetween:
   - min: 4
     max: 8
   - min: 3
     max: 7
-  - min: 2
-    max: 6
-  - min: 1
-    max: 5
-  - min: 1
-    max: 3
+  - min: 5
+    max: 7
   dificultyWight:
   - easy: 10
-    medium: 4
-    hard: 1
+    medium: 0
+    hard: 0
   - easy: 8
     medium: 6
     hard: 2
@@ -368,3 +257,107 @@ MonoBehaviour:
   - easy: 5
     medium: 5
     hard: 5
+  readlyToSpawn: 1
+--- !u!1001 &2735617444024199975
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6209495299523169683}
+    m_Modifications:
+    - target: {fileID: -5471795182315596458, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: s0
+      value: 
+      objectReference: {fileID: 1955178077, guid: f1d6d54b9fd334f71b4dd46740359c1f, type: 3}
+    - target: {fileID: -5471795182315596458, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: s1
+      value: 
+      objectReference: {fileID: -1747396348, guid: f1d6d54b9fd334f71b4dd46740359c1f, type: 3}
+    - target: {fileID: -5471795182315596458, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: s2
+      value: 
+      objectReference: {fileID: 735363116, guid: f1d6d54b9fd334f71b4dd46740359c1f, type: 3}
+    - target: {fileID: -5471795182315596458, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: s3
+      value: 
+      objectReference: {fileID: -2130881288, guid: f1d6d54b9fd334f71b4dd46740359c1f, type: 3}
+    - target: {fileID: -5471795182315596458, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: s4
+      value: 
+      objectReference: {fileID: 235618130, guid: f1d6d54b9fd334f71b4dd46740359c1f, type: 3}
+    - target: {fileID: -5471795182315596458, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: sr
+      value: 
+      objectReference: {fileID: 5319474073313476838}
+    - target: {fileID: -5471795182315596458, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: script
+      value: 
+      objectReference: {fileID: 5299533153568340076}
+    - target: {fileID: 4747510180116645150, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: m_Name
+      value: EarthHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832963421838092486, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832963421838092486, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832963421838092486, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832963421838092486, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832963421838092486, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832963421838092486, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832963421838092486, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832963421838092486, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832963421838092486, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832963421838092486, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832963421838092486, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7832963421838092486, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+--- !u!4 &5278952315525858273 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7832963421838092486, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+  m_PrefabInstance: {fileID: 2735617444024199975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &5319474073313476838 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7792437841076464577, guid: 01137ce29f0a74400a5fd0917cf7cd6c, type: 3}
+  m_PrefabInstance: {fileID: 2735617444024199975}
+  m_PrefabAsset: {fileID: 0}

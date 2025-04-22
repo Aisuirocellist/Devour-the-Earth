@@ -11,9 +11,7 @@ public class EnemyPathfinding : MonoBehaviour
 
     private float farRange;
     public float closeRange;
-    public float idleRange;
-    public float chaseRange;
-
+    private float chaseRange;
     public float attackRange;
     public float viewRange;
 
@@ -46,8 +44,8 @@ public class EnemyPathfinding : MonoBehaviour
         if (earthObj != null) centerObject = earthObj.transform;
 
         rb = GetComponent<Rigidbody2D>();
-        farRange = chaseRange;
         chaseRange = attackRange + 2;
+        farRange = chaseRange;
     }
 
     void FixedUpdate()
@@ -198,7 +196,6 @@ public class EnemyPathfinding : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, idleRange);
         Gizmos.DrawWireSphere(transform.position, chaseRange);
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.DrawWireSphere(transform.position, viewRange);
