@@ -25,6 +25,12 @@ public class EarthState : State
     {
         sr.color = hitColor;
         yield return new WaitForSeconds(0.2f);
+
+        if (GetHealth() <= 0)
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+
         sr.color = Color.white;
     }
 
