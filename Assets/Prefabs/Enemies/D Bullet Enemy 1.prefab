@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 5426604132168640782}
   - component: {fileID: -8943773572883902386}
   - component: {fileID: 6534857366728246793}
-  - component: {fileID: 8262507913825281127}
+  - component: {fileID: -7722014762478133403}
   m_Layer: 10
   m_Name: D Bullet Enemy 1
   m_TagString: enemy
@@ -202,8 +202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeRange: 0
-  idleRange: 0
-  chaseRange: 0
   attackRange: 0
   viewRange: 0
   separationRadius: 2
@@ -218,6 +216,8 @@ MonoBehaviour:
   shootAtLayer:
     serializedVersion: 2
     m_Bits: 768
+  chaseWhenHit: 0
+  faceWhenHit: 0
 --- !u!50 &6534857366728246793
 Rigidbody2D:
   serializedVersion: 5
@@ -245,7 +245,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8262507913825281127
+--- !u!114 &-7722014762478133403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,9 +254,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3218638885459967150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd4d64ca660a74d40ac96d47b7b23ce5, type: 3}
+  m_Script: {fileID: 11500000, guid: 02023c98ec02466429a439efb9f85b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletFirePoint: {fileID: 72480990400689009}
-  bulletSpeed: 25
+  bulletSpeed: 15
   bulletPrefab: {fileID: 2782712288049884434, guid: 08310242dfdd0684eb4b27cf891e73b5, type: 3}

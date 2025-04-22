@@ -101,10 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7bcfb15433e544cad9e3daf1cd4929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 0}
   speed: 7
   target: enemy
-  roateSpeed: 0
+  rotateSpeed: 0
   spaceBetween: 0
 --- !u!114 &-188956042778260416
 MonoBehaviour:
@@ -115,7 +114,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3501717510986240449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8743fb25417750242a429f7c9d0c61d8, type: 3}
+  m_Script: {fileID: 11500000, guid: ff39838c123cbb24d8fb627016b47534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceBetween: 5
+  spaceBetween: 0
+  checkRadius: 0
+  seporationSpeed: 0
+  speed: 0
+  checkLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  nearMe: []
