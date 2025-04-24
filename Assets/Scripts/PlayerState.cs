@@ -26,6 +26,7 @@ public class PlayerState : State
     {
         sr.color = hitColor;
 
+        CamShake.Instance.shake(4f, 0.5f);
         yield return new WaitForSeconds(0.2f);
 
         if (!IsAlive())

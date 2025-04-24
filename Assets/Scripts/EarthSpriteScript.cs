@@ -22,6 +22,10 @@ public class EarthSpriteScript : MonoBehaviour
         if (relitiveHealth <= nextPhaseHealth && relitiveHealth > 0)
         {
             earth.sprite = earthPhases[phaseCount];
+
+            if(phaseCount > 0)
+            CamShake.Instance.shake(15f,1.5f);
+
             phaseCount++;
         }
     }
