@@ -198,7 +198,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3501717510986240449}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0678a159c33cd9440997759f71f9834a, type: 3}
   m_Name: 
@@ -214,4 +214,4 @@ MonoBehaviour:
   explosionLayerMask:
     serializedVersion: 2
     m_Bits: 3072
-  homingRotationSpeed: 1.5
+  homingRotationSpeed: 5

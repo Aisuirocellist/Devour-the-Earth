@@ -176,8 +176,12 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7295031648975009161, guid: 9955a36ab58458b4db6d23e3f756ef87, type: 3}
+      propertyPath: maxLaunchSpeed
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7295031648975009161, guid: 9955a36ab58458b4db6d23e3f756ef87, type: 3}
       propertyPath: homingRotationSpeed
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

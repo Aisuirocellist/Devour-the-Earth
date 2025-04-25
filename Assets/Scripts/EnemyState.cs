@@ -31,7 +31,7 @@ public class EnemyState : State
         {
             GetComponent<DeathScript>().assimilate();
 
-            if (transform.parent.gameObject != null)
+            if (transform.parent != null)
                 Destroy(transform.parent.gameObject);
             else
                 Destroy(gameObject);

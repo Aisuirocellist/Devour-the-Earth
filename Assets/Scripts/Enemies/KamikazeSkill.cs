@@ -79,7 +79,7 @@ public class KamikazeSkill : EnemyInstantSkill
             }
         }
 
-        if (transform.parent.gameObject != null)
+        if (transform.parent != null)
             Destroy(transform.parent.gameObject);
         else
             Destroy(gameObject);
