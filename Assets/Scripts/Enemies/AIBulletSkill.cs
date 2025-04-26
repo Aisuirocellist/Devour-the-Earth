@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent (typeof(EnemyPathfinding))]
 public class AIBulletSkill : BulletSkill
 {
-    [SerializeField] EnemyBullet bulletPrefab;
+    [SerializeField] Projectile bulletPrefab;
     private EnemyPathfinding enemyPathfinding;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,7 +15,7 @@ public class AIBulletSkill : BulletSkill
 
     public override void UseSkill()
     {
-        EnemyBullet bullet = Instantiate(bulletPrefab, bulletFirePoint.position, transform.rotation);
+        Projectile bullet = Instantiate(bulletPrefab, bulletFirePoint.position, transform.rotation);
 
         bullet.SetDamage(GetDamage());
         bullet.SetSpeed(bulletSpeed);

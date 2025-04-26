@@ -4,8 +4,8 @@ using UnityEngine;
 public abstract class EnemyInstantSkill : EnemySkill
 {
     private float lastShootTime;
-
     private float randNum;
+
     protected void Initializer(float baseDamage, float cooldown)
     {
         SetBaseDamage(baseDamage);
@@ -22,7 +22,7 @@ public abstract class EnemyInstantSkill : EnemySkill
     }
     public override void UseSkill()
     {
-        randNum = UnityEngine.Random.Range(-GetCooldownModifier(), GetCooldownModifier());
+        randNum = Random.Range(-GetCooldownModifier(), GetCooldownModifier());
         lastShootTime = Time.time + randNum;
     }
 
