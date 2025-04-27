@@ -214,7 +214,6 @@ public class EnemyPathfinding : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, chaseRange);
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.DrawWireSphere(transform.position, viewRange);
         Gizmos.DrawWireSphere(transform.position, closeRange);
