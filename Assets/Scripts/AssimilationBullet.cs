@@ -1,44 +1,31 @@
 using UnityEngine;
 
-public class AssimilationBullet : MonoBehaviour
+public class AssimilationBullet : Projectile
 {
     [SerializeField] private AudioClip collisionAudio;
     private AudioSource audioSource;
-    private float damage = 1;
-    private float speed = 5;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnTriggerEnter2D(Collider2D collider)
     {
-        transform.Translate(transform.up * (speed * Time.deltaTime), Space.World);
-    }
+        if (hitEffect != null)
+            Instantiate(hitEffect, transform.position + transform.up * 0.5f, transform.rotation);
 
-    public void SetSpeed(float speed)
-    {
-        this.speed = speed;
-    }
-
-    public void SetDamage(float damage)
-    {
-        this.damage = damage;
-    }
-
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        // Placeholder for collision audio
-        audioSource.clip = collisionAudio;
-        audioSource.Play();
+        if (collisionAudio != null)
+        {
+            audioSource.clip = collisionAudio;
+            audioSource.Play();
+        }
 
         State state = collider.gameObject.GetComponent<State>();
 
         if (state != null)
         {
-            state.TakeDamage(damage);
+            state.TakeDamage(GetDamage());
         }
 
         Destroy(gameObject);

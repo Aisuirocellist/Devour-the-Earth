@@ -4,7 +4,7 @@ public class AssimilatedLaserBeamSkill : LaserBeamSkill
 {
     protected override bool IsSkillChargeTriggered()
     {
-        return Input.GetKey(KeyCode.V);
+        return Input.GetKey(KeyCode.Space);
     }
 
     // Connect you AI skill charge release to here

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public abstract class EnemySkill : MonoBehaviour
 {
-    [SerializeField] private float baseDamage;
-    [SerializeField] private float cooldown;
-    [SerializeField] private float cooldownRandModifier = 0f;
+    public float baseDamage;
+    public float cooldown;
+    public float cooldownRandModifier = 0f;
     
     protected virtual void Update()
     {
