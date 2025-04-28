@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081b91d688659174d918b367e13ac685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 5
+  startingHealth: 20
   hitColor: {r: 1, g: 0, b: 0, a: 0.5137255}
   shipData:
     shipType: {fileID: 0}

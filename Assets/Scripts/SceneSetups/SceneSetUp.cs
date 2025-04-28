@@ -8,6 +8,7 @@ public class SceneSetUp : MonoBehaviour
 
     void Start()
     {
+        GlobalStats.enemiesOnSkreen = 9;
         foreach (Assimilation.ShipData shipData in Assimilation.minionList)
         {
             GameObject homeNode = new GameObject();

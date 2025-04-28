@@ -19,6 +19,8 @@ public class BossFightEnemySpawning : MonoBehaviour
     private int phase;
     private System.Random rand;
 
+    public int maximumEnemiesAllowed = 100;
+
     void Start()
     {
         earthState = GetComponent<EarthState>();
@@ -31,7 +33,7 @@ public class BossFightEnemySpawning : MonoBehaviour
     {
         float relativeEarthHealth = earthState.GetHealth() / earthState.startingHealth;
         phase = (int) ((1f - relativeEarthHealth) * totalPhase);
-        if (readyToSpawn)
+        if (readyToSpawn && maximumEnemiesAllowed > GlobalStats.enemiesOnSkreen)
             StartCoroutine(SpawnEnemy());
     }
 
@@ -71,6 +73,7 @@ public class BossFightEnemySpawning : MonoBehaviour
         for (int i = 0; i < randCount; i++)
         {
             GameObject newEnemy = Instantiate(randEnemy.prefab);
+            GlobalStats.enemiesOnSkreen++;
             newEnemy.transform.position = new Vector2(transform.position.x, transform.position.y - 1);
             yield return null; // Wait one frame so Awake/Start can run
 
@@ -79,7 +82,7 @@ public class BossFightEnemySpawning : MonoBehaviour
             yield return new WaitForSeconds(waitTimeForEqualOrbit(randOrbit, randCount, enemyPathfinding.idleSpeed));
         }
 
-        float randWait = rand.Next(timeRange.min, timeRange.max);
+        float randWait = Random.Range(timeRange.min, timeRange.max);
         yield return new WaitForSeconds(randWait);
         readyToSpawn = true;
     }
@@ -137,8 +140,8 @@ public class BossFightEnemySpawning : MonoBehaviour
         [System.Serializable]
         public struct TimeRange
         {
-            public int min;
-            public int max;
+            public float min;
+            public float max;
         }
 
         [System.Serializable]

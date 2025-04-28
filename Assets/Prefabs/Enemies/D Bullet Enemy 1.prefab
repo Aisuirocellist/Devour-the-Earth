@@ -136,10 +136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5020466ae9f554bbdf9bf1800cfa4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 5
+  startingHealth: 3
   hitColor: {r: 1, g: 0, b: 0, a: 0.5137255}
   minionType: {fileID: 6584140851060744283, guid: 40903713bfb374a268fe058a630ff895, type: 3}
   pickUp: {fileID: 6377457681966170572, guid: 50462eb47cbb3b14aa4b005f23821d72, type: 3}
+  chanceToDrop: 80
 --- !u!58 &5426604132168640782
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class EnemyState : State, Stunnable
     public GameObject minionType;
     public GameObject pickUp;
 
+    public int chanceToDrop;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
     {
@@ -53,7 +55,10 @@ public class EnemyState : State, Stunnable
 
         if (!IsAlive())
         {
+            if(Random.Range(0f,100f) < chanceToDrop)
             spawnPickUp();
+
+            GlobalStats.enemiesOnSkreen--;
 
             if (transform.parent != null)
                 Destroy(transform.parent.gameObject);
