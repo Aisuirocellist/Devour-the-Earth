@@ -3,24 +3,13 @@ using UnityEngine;
 public class DeathScript : MonoBehaviour
 {
 
-    private EnemyState enemyScript;
     public GameObject minionType;
-    public GameObject minionNode;
-    void Start()
+    public GameObject pickUp;
+
+    public void spawnPickUp()
     {
-        enemyScript = GetComponent<EnemyState>();
+        GameObject newPickUp = Instantiate(pickUp);
+        newPickUp.GetComponent<ShipPickUp>().shiptype = minionType;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void assimilate() 
-    {
-        GameObject minionN = Instantiate(minionNode);
-        minionN.GetComponent<MinionData>().shipType = minionType;
-        minionN.transform.SetParent(GameObject.Find("CollectedList").transform);
-    }
 }

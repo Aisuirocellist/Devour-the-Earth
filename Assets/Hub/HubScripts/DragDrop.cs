@@ -7,26 +7,24 @@ using UnityEngine.UI;
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler,
     IDragHandler
 {
-    [SerializeField] private Canvas canvas;
     [SerializeField] private Camera cam;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private RotateObj roateScript;
     private bool mouseOver;
+    public Assimilation.ShipData shipData;
     public bool overlap;
 
-    [SerializeField] private GameObject inventory;
     public Vector2 home;
     public bool onArea;
-    public int minionNodeNum;
+
+    public HubSetUp hub;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         roateScript = GetComponent<RotateObj>();
-        inventory = GameObject.Find("Ship Menu");
-        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         cam = Camera.main;
     }
     public void OnBeginDrag(PointerEventData eventData)
@@ -34,7 +32,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         //Debug.Log("OnBeginDrag");
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
-        transform.SetParent(canvas.transform, true);
+        transform.SetParent(hub.canvas.transform, true);
+        
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -54,24 +53,21 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         //Debug.Log("OnEndDrag");
         if (eventData.pointerEnter == null || eventData.pointerEnter.GetComponent<DropArea>() == null || overlap)
         {
-            MinionData minionDataScript = GetComponentInChildren<MinionData>();
             if (onArea)
             {
 
                 //Debug.Log("AAA");
                 rectTransform.anchoredPosition = home;
-                minionDataScript.hubLocation = home;
-                minionDataScript.gameLocation = GetComponentInChildren<MinionData>().hubToGameLocation();
-                minionDataScript.active = true;
+                shipData.hubLocation = home;
+                shipData.gameLocation = hubToGameLocation();
             }
             else
             {
                 //Debug.Log("AAAA");
                 CanRotate(false);
-                transform.localEulerAngles = new Vector3(0,0,0);
-                Transform gridObject = inventory.transform.Find("Viewport").Find("Content");
+                transform.localEulerAngles = new Vector3(0, 0, 0);
+                Transform gridObject = hub.grid;
                 this.transform.SetParent(gridObject);
-                minionDataScript.active = false;
             }
         }
         canvasGroup.alpha = 1f;
@@ -83,7 +79,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         //Debug.Log("OnPointerDown");
     }
 
-    public void CanRotate(bool rotateable) {
+    public void CanRotate(bool rotateable)
+    {
         if (rotateable)
             roateScript.enabled = true;
         else
@@ -106,5 +103,18 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         {
             overlap = false;
         }
+    }
+
+    public Vector2 hubToGameLocation()
+    {
+        GameObject ship = hub.centerObj;
+        Vector2 midpoint = ship.GetComponent<RectTransform>().TransformPoint(ship.GetComponent<RectTransform>().rect.center);
+        Vector2 minionPoint = rectTransform.TransformPoint(rectTransform.rect.center);
+
+        //Debug.Log(midpoint);
+
+        Vector2 offset = minionPoint - midpoint;
+        //Debug.Log(offset);
+        return offset;
     }
 }

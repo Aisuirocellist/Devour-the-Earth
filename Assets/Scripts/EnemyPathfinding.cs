@@ -155,8 +155,13 @@ public class EnemyPathfinding : MonoBehaviour
 
         float currentDistance = toCenter.magnitude;
         float distanceError = currentDistance - earthOrbitRadius;
+        Vector2 tangent = new Vector2();
 
-        Vector2 tangent = new Vector2(-toCenter.y, toCenter.x).normalized;
+        if (earthOrbitRadius % 2 == 0)
+        { tangent = new Vector2(-toCenter.y, toCenter.x).normalized; }
+        else
+        { tangent = new Vector2(toCenter.y, -toCenter.x).normalized; }
+
         Vector2 radialCorrection = toCenter.normalized * (distanceError);
         Vector2 adjustedDirection = (tangent + radialCorrection).normalized;
 

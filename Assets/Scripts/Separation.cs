@@ -9,7 +9,7 @@ public class Separation : MonoBehaviour
     public float speed;
 
     public LayerMask checkLayer;
-    public Collider2D[] nearMe;
+    private Collider2D[] nearMe;
     private float myRadius;
 
     void Start()

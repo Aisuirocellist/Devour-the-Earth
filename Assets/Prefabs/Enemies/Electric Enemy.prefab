@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 8185131762923795578}
   - component: {fileID: 5623882224677015450}
   - component: {fileID: 2903790708391492245}
-  - component: {fileID: 2555196729341903372}
-  m_Layer: 9
+  - component: {fileID: -5589010117791503998}
+  m_Layer: 10
   m_Name: Electric Enemy
-  m_TagString: minion
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc197b2e9b4b7df499852ad96f1e305e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,23 +132,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f5ea74497c7ea4885dfb18619f1dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closeRange: 0
-  attackRange: 0
-  viewRange: 0
-  separationRadius: 0
-  separationStrength: 0
-  chaseSpeed: 0
-  lingerSpeed: 0
-  idleSpeed: 0
-  earthOrbitRadius: 0
+  closeRange: 7
+  attackRange: 10
+  viewRange: 10
+  separationRadius: 2
+  separationStrength: 1
+  chaseSpeed: 7
+  lingerSpeed: 5
+  idleSpeed: 10
+  earthOrbitRadius: 15
   avoidLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 3072
   shootAtLayer:
     serializedVersion: 2
-    m_Bits: 0
-  chaseWhenHit: 0
-  faceWhenHit: 0
+    m_Bits: 256
+  chaseWhenHit: 1
+  faceWhenHit: 1
 --- !u!114 &5623882224677015450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   baseDamage: 7
   cooldown: 5
   cooldownRandModifier: 0.1
-  bulletFirePoint: {fileID: 0}
+  bulletFirePoint: {fileID: 2867434295315454512}
   bulletSpeed: 3
   bulletPrefab: {fileID: -8573481320118398789, guid: a8d2ee8f6b7714b4faf89f3151032fc1, type: 3}
 --- !u!114 &2903790708391492245
@@ -181,20 +181,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 5
   hitColor: {r: 1, g: 0, b: 0, a: 0.5294118}
---- !u!114 &2555196729341903372
-MonoBehaviour:
+  minionType: {fileID: 8176943250777592069, guid: 77f0b5f9f7015224292298cabfe675ea, type: 3}
+  pickUp: {fileID: 6377457681966170572, guid: 50462eb47cbb3b14aa4b005f23821d72, type: 3}
+--- !u!58 &-5589010117791503998
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5532824009373988589}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b818bc28ef1a8c49a57a1a5ec93b492, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minionType: {fileID: 6534208846662201636, guid: 6172ff2d21e56e34dab2ddcf9087a2a1, type: 3}
-  minionNode: {fileID: 3362224128636858028, guid: b08aee385ef83bc43859a3fbf704b7a3, type: 3}
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.1}
+  m_Radius: 0.5
 --- !u!1 &9093784004581245639
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2867434295315454512}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Orb Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +244,7 @@ Transform:
   m_GameObject: {fileID: 9093784004581245639}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

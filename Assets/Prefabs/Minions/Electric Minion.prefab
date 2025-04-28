@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5576259135223426748}
   - component: {fileID: -1626205019459719214}
   - component: {fileID: -7491127053048234649}
+  - component: {fileID: 1836650149229743833}
   m_Layer: 9
   m_Name: Electric Minion
   m_TagString: minion
@@ -112,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -712631045867808456, guid: b670ab75dde984907b8570040daa08c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6b2e3ac0ddecdf2468eae37f54517c00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,14 +154,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff39838c123cbb24d8fb627016b47534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceBetween: 0
-  checkRadius: 0
+  spaceBetween: 5
+  checkRadius: 10
   seporationSpeed: 0
   speed: 0
   checkLayer:
     serializedVersion: 2
-    m_Bits: 0
-  nearMe: []
+    m_Bits: 3584
 --- !u!114 &-1626205019459719214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,10 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7bcfb15433e544cad9e3daf1cd4929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 7
   target: enemy
-  rotateSpeed: 0
-  spaceBetween: 0
+  rotateSpeed: 10
 --- !u!58 &-7491127053048234649
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -213,3 +212,23 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1836650149229743833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534208846662201636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 081b91d688659174d918b367e13ac685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 5
+  hitColor: {r: 1, g: 0, b: 0, a: 0.5137255}
+  shipData:
+    shipType: {fileID: 0}
+    hubLocation: {x: 0, y: 0}
+    gameLocation: {x: 0, y: 0}
+    minionAngle: {x: 0, y: 0, z: 0, w: 0}
+    stickerSprite: {fileID: 0}

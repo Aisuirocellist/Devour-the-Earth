@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 4548242278678892098}
   - component: {fileID: 5078059390635723953}
   - component: {fileID: 1450485057652798984}
-  - component: {fileID: -4134114914299604125}
   - component: {fileID: 5426604132168640782}
   - component: {fileID: -8943773572883902386}
   - component: {fileID: 6534857366728246793}
@@ -139,20 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 5
   hitColor: {r: 1, g: 0, b: 0, a: 0.5137255}
---- !u!114 &-4134114914299604125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3218638885459967150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b818bc28ef1a8c49a57a1a5ec93b492, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minionType: {fileID: 3501717510986240449, guid: b7c44fe76fc50d44ea8974747f18275c, type: 3}
-  minionNode: {fileID: 3362224128636858028, guid: b08aee385ef83bc43859a3fbf704b7a3, type: 3}
+  minionType: {fileID: 4163834173411195793, guid: 5a62d5f8410ac4abaa27d1c0a9604ac7, type: 3}
+  pickUp: {fileID: 6377457681966170572, guid: 50462eb47cbb3b14aa4b005f23821d72, type: 3}
 --- !u!58 &5426604132168640782
 CircleCollider2D:
   m_ObjectHideFlags: 0

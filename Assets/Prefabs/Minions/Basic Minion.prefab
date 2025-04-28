@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 8526928609776350283}
   - component: {fileID: 7367523594157962473}
   - component: {fileID: 8829695041819542925}
+  - component: {fileID: 797360198292133910}
   m_Layer: 9
   m_Name: Basic Minion
   m_TagString: minion
@@ -174,7 +175,6 @@ MonoBehaviour:
   speed: 7
   target: enemy
   rotateSpeed: 10
-  spaceBetween: 0
 --- !u!114 &7367523594157962473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +194,6 @@ MonoBehaviour:
   checkLayer:
     serializedVersion: 2
     m_Bits: 3584
-  nearMe: []
 --- !u!114 &8829695041819542925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,3 +212,17 @@ MonoBehaviour:
   bulletFirePoint: {fileID: 3938147062789534068}
   bulletSpeed: 25
   bulletPrefab: {fileID: 1191537186931966177, guid: d8720e51d2a629345ad76ecd2e7259b4, type: 3}
+--- !u!114 &797360198292133910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3501717510986240449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 081b91d688659174d918b367e13ac685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 5
+  hitColor: {r: 1, g: 0, b: 0, a: 0.5137255}

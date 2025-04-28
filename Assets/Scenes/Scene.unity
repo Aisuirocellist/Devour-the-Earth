@@ -161,9 +161,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 368997901}
-  - component: {fileID: 368997900}
   - component: {fileID: 368997902}
   - component: {fileID: 368997903}
+  - component: {fileID: 368997905}
+  - component: {fileID: 368997904}
+  - component: {fileID: 368997906}
   m_Layer: 0
   m_Name: Scene Controller
   m_TagString: Untagged
@@ -171,18 +173,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &368997900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368997899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a9b7589eb448124083efd49dbbd6e0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &368997901
 Transform:
   m_ObjectHideFlags: 0
@@ -303,6 +293,45 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368997899}
   m_Enabled: 1
+--- !u!114 &368997904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368997899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45756ac8b21a04a529f69d53bfe6e30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &368997905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368997899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 509419ed6ed8f384ea0dfc83b0ee782f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 488659087}
+--- !u!114 &368997906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368997899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16149c3a8eaf69f4891c4621e014d663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectedList: []
+  minionList: []
 --- !u!1 &375033177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,10 +1042,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+    x: 0.0012150669
+    y: 0.0021598272
+    width: 0.9963548
+    height: 0.9935205
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1166,7 +1195,7 @@ GameObject:
   - component: {fileID: 1057664096}
   m_Layer: 13
   m_Name: Wall (2)
-  m_TagString: Untagged
+  m_TagString: BulletWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1847,7 +1876,7 @@ GameObject:
   - component: {fileID: 1613755669}
   m_Layer: 13
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: BulletWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2131,7 +2160,7 @@ GameObject:
   - component: {fileID: 1822251975}
   m_Layer: 13
   m_Name: Wall (3)
-  m_TagString: Untagged
+  m_TagString: BulletWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2362,8 +2391,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 368997900}
-        m_TargetAssemblyTypeName: ControleScript, Assembly-CSharp
+      - m_Target: {fileID: 368997904}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: loadScene
         m_Mode: 5
         m_Arguments:
@@ -2662,7 +2691,7 @@ GameObject:
   - component: {fileID: 1953192509}
   m_Layer: 13
   m_Name: Wall (1)
-  m_TagString: Untagged
+  m_TagString: BulletWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2941,6 +2970,10 @@ PrefabInstance:
     - target: {fileID: 6209495299523169683, guid: 21fb6688f9eec461c85b5dc02ddfb2a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190358900932469544, guid: 21fb6688f9eec461c85b5dc02ddfb2a5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7190358900932469544, guid: 21fb6688f9eec461c85b5dc02ddfb2a5, type: 3}
       propertyPath: readlyToSpawn

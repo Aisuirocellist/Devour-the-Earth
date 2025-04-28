@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1269341640156067112}
   - component: {fileID: 1174237487863420829}
   - component: {fileID: 1450485057652798984}
-  - component: {fileID: -4134114914299604125}
   - component: {fileID: 7251759994328462456}
   - component: {fileID: 7295031648975009161}
   m_Layer: 10
@@ -180,20 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 10
   hitColor: {r: 1, g: 0, b: 0, a: 0.5137255}
---- !u!114 &-4134114914299604125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3218638885459967150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b818bc28ef1a8c49a57a1a5ec93b492, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minionType: {fileID: 3501717510986240449, guid: 2ae78dfc688a80c41bd782e7c459275c, type: 3}
-  minionNode: {fileID: 3362224128636858028, guid: b08aee385ef83bc43859a3fbf704b7a3, type: 3}
+  minionType: {fileID: 5082064056509682292, guid: 06c992a6b2ca04aee874c7a05e131d19, type: 3}
+  pickUp: {fileID: 6377457681966170572, guid: 50462eb47cbb3b14aa4b005f23821d72, type: 3}
 --- !u!114 &7251759994328462456
 MonoBehaviour:
   m_ObjectHideFlags: 0

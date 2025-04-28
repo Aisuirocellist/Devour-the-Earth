@@ -9,7 +9,7 @@ public class RotateObj : MonoBehaviour, IScrollHandler, IPointerEnterHandler, IP
     private RectTransform rectTransform;
     private bool mouseOver;
     private DragDrop dragObjScript;
-    private MinionData minionDataScript;
+    private Assimilation.ShipData shipData;
 
     public float rotationSpeed;
     private void Awake()
@@ -20,8 +20,8 @@ public class RotateObj : MonoBehaviour, IScrollHandler, IPointerEnterHandler, IP
 
     public void OnScroll(PointerEventData eventData)
     {
-        if(minionDataScript == null)
-            minionDataScript = GetComponentInChildren<MinionData>();
+        if(shipData == null)
+            shipData = dragObjScript.shipData;
 
         if (dragObjScript.onArea && mouseOver)
         {
@@ -31,7 +31,7 @@ public class RotateObj : MonoBehaviour, IScrollHandler, IPointerEnterHandler, IP
             currentRotation.z += scrollAmount * rotationSpeed;
 
             transform.localEulerAngles = currentRotation;
-            minionDataScript.minionAngle = rectTransform.rotation;
+            shipData.minionAngle = rectTransform.rotation;
         }
     }
 

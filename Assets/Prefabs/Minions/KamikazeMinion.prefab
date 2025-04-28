@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7367523594157962473}
   - component: {fileID: 2539761267255915380}
   - component: {fileID: 8800813724875066698}
+  - component: {fileID: 8431230108762927604}
   m_Layer: 9
   m_Name: KamikazeMinion
   m_TagString: minion
@@ -107,7 +108,6 @@ MonoBehaviour:
   speed: 7
   target: enemy
   rotateSpeed: 10
-  spaceBetween: 0
 --- !u!58 &-3704975290476579779
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -163,7 +163,6 @@ MonoBehaviour:
   checkLayer:
     serializedVersion: 2
     m_Bits: 3584
-  nearMe: []
 --- !u!50 &2539761267255915380
 Rigidbody2D:
   serializedVersion: 5
@@ -207,7 +206,7 @@ MonoBehaviour:
   cooldown: 0
   cooldownRandModifier: 0
   explosionParticle: {fileID: 3557155110858833212, guid: e066746fd7b9cb249b0d88aea9752083, type: 3}
-  maxLaunchSpeed: 15
+  maxLaunchSpeed: 24
   accelRate: 5
   autoDestructionTime: 1.5
   explosionRadius: 3
@@ -215,3 +214,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3072
   homingRotationSpeed: 5
+--- !u!114 &8431230108762927604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3501717510986240449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 081b91d688659174d918b367e13ac685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 5
+  hitColor: {r: 1, g: 0, b: 0, a: 0.5137255}
+  shipData:
+    shipType: {fileID: 0}
+    hubLocation: {x: 0, y: 0}
+    gameLocation: {x: 0, y: 0}
+    minionAngle: {x: 0, y: 0, z: 0, w: 0}
+    stickerSprite: {fileID: 0}

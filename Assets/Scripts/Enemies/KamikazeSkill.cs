@@ -79,6 +79,9 @@ public class KamikazeSkill : EnemyInstantSkill
             }
         }
 
+        if (GetComponent<MinionState>().shipData != null)
+            Assimilation.minionList.Remove(GetComponent<MinionState>().shipData);
+
         if (transform.parent != null)
             Destroy(transform.parent.gameObject);
         else

@@ -6,6 +6,8 @@ public class MinionState : State
     [SerializeField] Color hitColor;
     private SpriteRenderer sr;
 
+    public Assimilation.ShipData shipData;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
     {
@@ -28,6 +30,9 @@ public class MinionState : State
 
         if (!IsAlive())
         {
+            if (shipData != null)
+                Assimilation.minionList.Remove(shipData);
+
             if (transform.parent != null)
                 Destroy(transform.parent.gameObject);
             else

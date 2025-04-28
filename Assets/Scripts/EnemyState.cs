@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static TMPro.Examples.ObjectSpin;
 
 public class EnemyState : State, Stunnable
 {
@@ -10,6 +11,9 @@ public class EnemyState : State, Stunnable
     private Rigidbody2D rb;
     private EnemyPathfinding enemyPathfinding;
     private EnemySkill skill;
+
+    public GameObject minionType;
+    public GameObject pickUp;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
@@ -49,7 +53,7 @@ public class EnemyState : State, Stunnable
 
         if (!IsAlive())
         {
-            GetComponent<DeathScript>().assimilate();
+            spawnPickUp();
 
             if (transform.parent != null)
                 Destroy(transform.parent.gameObject);
@@ -74,5 +78,13 @@ public class EnemyState : State, Stunnable
         skill.enabled = true;
 
         isStunned = false;
+    }
+    public void spawnPickUp()
+    {
+        GameObject newPickUp = Instantiate(pickUp, transform.position, Quaternion.identity);
+        newPickUp.GetComponent<Rigidbody2D>().linearVelocity = rb.linearVelocity / 1.5f;
+        newPickUp.transform.position = this.transform.position;
+        newPickUp.GetComponent<ShipPickUp>().shiptype = minionType;
+        newPickUp.GetComponent<ShipPickUp>().shipSprite = minionType.GetComponentInChildren<SpriteRenderer>().sprite;
     }
 }

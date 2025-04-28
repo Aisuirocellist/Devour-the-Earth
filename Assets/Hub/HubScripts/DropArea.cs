@@ -25,7 +25,7 @@ public class DropArea : MonoBehaviour, IDropHandler
             return;
 
         DragDrop itemScript = dropObj.GetComponent<DragDrop>();
-        MinionData minionDataScript = dropObj.GetComponentInChildren<MinionData>();
+        Assimilation.ShipData shipData = itemScript.shipData;
         //Debug.Log("OnDrop");
 
         if (eventData.pointerDrag != null) {
@@ -35,21 +35,26 @@ public class DropArea : MonoBehaviour, IDropHandler
                 case DropSpace.shipArea:
                     if (!itemScript.overlap)
                     {
+                        if (!itemScript.onArea)
+                            Assimilation.swapToMinionList(shipData);
+
                         itemScript.onArea = true;
                         itemScript.CanRotate(true);
                         itemScript.home = dropObj.GetComponent<RectTransform>().anchoredPosition;
-                        minionDataScript.hubLocation = itemScript.home;
-                        minionDataScript.gameLocation = minionDataScript.hubToGameLocation();
-                        minionDataScript.active = true;
+                        shipData.hubLocation = itemScript.home;
+                        shipData.gameLocation = itemScript.hubToGameLocation();
                         //Debug.Log("Shiparea");
                     }
                     break;
 
                 case DropSpace.menuArea:
+
+                    if (itemScript.onArea)
+                        Assimilation.swapToCollectionList(shipData);
+
                     dropObj.transform.SetParent(gridobject);
                     itemScript.onArea = false;
                     itemScript.CanRotate(false);
-                    dropObj.GetComponentInChildren<MinionData>().active = false;
                     //Debug.Log("menuarea");
                     break;
             

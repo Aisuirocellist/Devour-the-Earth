@@ -9,7 +9,7 @@ public class BasicPathfinding : MonoBehaviour
 
     public string target;
     public float rotateSpeed;
-    public float spaceBetween;
+    private float spaceBetween;
 
     void Start()
     {
