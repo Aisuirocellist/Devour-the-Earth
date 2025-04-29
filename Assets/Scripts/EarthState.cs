@@ -28,7 +28,7 @@ public class EarthState : State
 
         if (GetHealth() <= 0)
         {
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("Victory Scene");
         }
 
         sr.color = Color.white;
