@@ -1,5 +1,7 @@
 # Unity Project Setup (PLEASE READ)
 
+[![Demo Video](https://img.youtube.com/vi/e8B69nNBfKg/0.jpg] ((https://youtu.be/e8B69nNBfKg)
+
 Before you clone the team repo, follow these instructions:
 
 1. Install GitHub Desktop, which also installs Git LFS: https://desktop.github.com (if you are using git via command line, install Git LFS: https://git-lfs.com)
