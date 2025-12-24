@@ -5,19 +5,25 @@
 **Trailer video:** https://youtu.be/e8B69nNBfKg
 [![Watch the video](https://img.youtube.com/vi/e8B69nNBfKg/maxresdefault.jpg)](https://youtu.be/e8B69nNBfKg)
 
-*Devour the Earth* is a Space Invaders-inspired shooter built in Unity that focuses on persistent progression through failure. Players control disposable hivemind entities, assimilating enemy ships across runs to overwhelm an escalating planetary defense system gradually.
+*Devour the Earth* is a Space Invaders-inspired shooter built in Unity that focuses on persistent progression through failure. Players control disposable hive mind entities, assimilating enemy ships across runs to overwhelm an escalating planetary defense system gradually.
 
 ## Core Systems & Mechanics
-In *Devour the Earth*, each run (invasion) is a single, expendable hivemind attempting to break through Earth's defenses. Individual entities are inherently weak, so failure is expected. The primary objective during an invasion is to damage the Earth by firing at it while surviving waves of defending ships. Earth's health is represented by a global HP bar.
+
+In *Devour the Earth*, each run (invasion) is a single, expendable hive mind attempting to break through Earth's defenses. Individual entities are inherently weak, so failure is expected. The primary objective during an invasion is to damage the Earth by firing at it while surviving waves of defending ships. Earth's health is represented by a global HP bar.
 
 ### Assimilation
-During each invasion, enemy ships, when destroyed, occasionally drop fragments, which can be collected and sent back to the hivemind base. These fragments are assimilated between invasions and converted into minions that persist across runs, as long as they are not destroyed.
 
-Before each invasion, players can 
+During each invasion, enemy ships, when destroyed, occasionally drop fragments, which can be collected and sent back to the hive mind base. These fragments are assimilated between invasions and converted into minions that persist across runs.
+
+Before starting a new invasion, players can drag assimilated minions into a radar-like area. These minions will be deployed in the invasion to assist the next hive mind entity during combat. Once destroyed, minions are removed from the Hub to encourage experimentation and risk management.
 
 ### Enemy Phases
 
-
+Earth's defenses escalate based on remaining HP: every 25% reduction introduces a new enemy type:
+- Basic enemies: Standard projectile-based units
+- Kamikaze enemies: High-speed, homing attackers that self-destruct (explode) on contact
+- Electric enemies: Area-control units that fire electrical orbs that stun others on contact
+- Laser enemies: High-damage, long charge time, precise units
 
 ### Minion Control
 
