@@ -19,11 +19,19 @@ Before starting a new invasion, players can drag assimilated minions into a rada
 
 ### Enemy Phases
 
-Earth's defenses escalate based on remaining HP: every 25% reduction introduces a new enemy type:
-- Basic enemies: Standard projectile-based units
-- Kamikaze enemies: High-speed, homing attackers that self-destruct (explode) on contact
-- Electric enemies: Area-control units that fire electrical orbs that stun others on contact
-- Laser enemies: High-damage, long charge time, precise units
+Earth's defenses escalate based on remaining HP => every 25% reduction introduces a new enemy type:
+
+#### Basic Enemies 
+Standard projectile-based units (with two variants).
+
+#### Kamikaze enemies
+High-speed, homing units that self-destruct on contact.
+
+#### Electric enemies
+Area-control units that shoot electrical orbs, stunning any entities they hit.
+
+#### Laser enemies
+Precision-based units that charge high-damage laser attacks.
 
 ### Minion Control
 
