@@ -53,7 +53,8 @@ This input differentiation gives each minion type a distinct tactical role and f
 ![Unity 6](https://img.shields.io/badge/Engine-Unity%206-black)
 ![C#](https://img.shields.io/badge/Language-C%23-blue)
 ![Platform](https://img.shields.io/badge/Platform-WebGL%20%7C%20Windows-green)
-- Due to a WebGL limitation, the electric enemy's orb VFX does not render correctly on itch.io. Hence, the Windows executable is recommended.
+
+Due to a WebGL limitation, the electric enemy's orb VFX does not render correctly on itch.io. Hence, the Windows executable is recommended.
 
 ## Lessons Learned
 
