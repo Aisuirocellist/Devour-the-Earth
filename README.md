@@ -1,7 +1,9 @@
 # Devour the Earth
 
 **Genre:** Space Invaders Variation
+
 **Platforms:** Web, Windows
+
 **Game Link:** https://ecse-csds290.itch.io/team9-s2025
 
 ## Background Story
