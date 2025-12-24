@@ -50,7 +50,7 @@ Different minion types require different player inputs to activate their abiliti
 This input differentiation gives each minion type a distinct tactical role and forces players to make active decisions during combat.
 
 ## Technical Notes
-![Unity](https://img.shields.io/badge/Engine-Unity-black)
+![Unity 6](https://img.shields.io/badge/Engine-Unity%206-black)
 ![C#](https://img.shields.io/badge/Language-C%23-blue)
 ![Platform](https://img.shields.io/badge/Platform-WebGL%20%7C%20Windows-green)
 - Due to a WebGL limitation, the electric enemy's orb VFX does not render correctly on itch.io. Hence, the Windows executable is recommended.
