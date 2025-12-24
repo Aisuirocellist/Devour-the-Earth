@@ -23,6 +23,7 @@ Earth's defenses escalate based on remaining HP => every 25% reduction introduce
 
 #### Basic Enemies 
 Standard projectile-based units (with two variants).
+
 ![Basic enemy attack](https://github.com/user-attachments/assets/4a841089-54a1-4d8e-a6d5-380f7cf67321)
 
 #### Kamikaze enemies
