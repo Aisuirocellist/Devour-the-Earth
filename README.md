@@ -1,19 +1,13 @@
 # Devour the Earth
 
-## Game Info
-- **Genre:** Space Invaders Variation
-- **Game Engine:** Unity
-- **Platforms:** WebGL, Windows
-- **Game Link:** https://ecse-csds290.itch.io/team9-s2025
-
-## Background Story
-
-Far across the galaxy, the Earth has been discovered by a hivemind of space monster parasites. However, being a hivemind is not fun, as everything on their planet looks the same; they are tired of seeing and eating platinum every single day. Excitingly, they discovered that the Earth contains elements they had never seen before, and its core is composed primarily of nickel and iron. That must be tasty! So the aliens, ready to do anything to sate their boredom, set out on a journey across the galaxy to devour it. However, humanity’s advanced technology has alerted them to the incoming threat, so they rally around the planet to defend it. To reach the Earth’s core, the aliens must assimilate ships to grow their army and Devour The Earth!
-
-## Gameplay Summary / Core Mechanics
+**Game link:** https://ecse-csds290.itch.io/team9-s2025
 
 **Trailer video:** https://youtu.be/e8B69nNBfKg
 [![Watch the video](https://img.youtube.com/vi/e8B69nNBfKg/maxresdefault.jpg)](https://youtu.be/e8B69nNBfKg)
+
+Devour the Earth is a Space Invaders-inspired shooter built in Unity that focuses on persistent progression through failure. Players control disposable hivemind entities, assimilating enemy ships across runs to gradually overwhelm an escalating planetary defense system.
+
+## Gameplay Overview / Core Mechanics
 
 When you press the Play button of the game, you'll enter the Hub, which is empty at the moment. Now, when you press the Attack button, located at the bottom right of the Hub, the invasion will begin. To devour the Earth, you must attack the Earth and lower its health, which is quantified at the bottom of the screen as the blue HP bar. You can move yourself with WASD, aim by moving the mouse, and fire a bullet with the left mouse click/hold.
 
@@ -21,21 +15,14 @@ However, you are a mere single hivemind entity, too weak to destroy the Earth th
 
 As you get stronger, you will notice that every time you lower the Earth's HP by 25%, it sends out stronger and more diverse ships. In these 4 different phases, the Earth will introduce a basic enemy, a kamikaze enemy, an electric enemy, and a laser enemy, respectively. Except for the basic minion (and other bullet-type minions), which you can fire their bullets with the left mouse click/hold, the other three types of minions require different inputs. For more details, press the CONTROLS button in the Hub.
 
-## Additional Mechanics
+## Technical Notes
+- Built in **Unity**
+- Target platforms: **WebGL** and **Windows**
+- Due to a WebGL limitation, the electric enemy's orb SFX visual effect does not render correctly on itch.io. Hence, the Windows executable is recommended.
+
+## Lessons Learned
 
 
-
-## Strengths
-
-
-
-## Areas for Improvement
-
-
-
-## Technical Limitations
-
-Unfortunately, the electric orb of the electric enemy, which uses SFX, is not visible in the WebGL build (itch.io website) due to an internal issue. Although our team included the WebGL version for convenience, we highly recommend downloading the Unity build (execution) file from the download section at the bottom of the itch.io website.
 
 ## Special Thanks to:
 - Foozle - Itch.io - Void ship collection
