@@ -67,10 +67,10 @@ Due to a WebGL limitation, the electric enemy's orb VFX does not render correctl
 
 ## Contributors
 
-- nirow1010 - player movement design, entity class hierarchy, and enemy/minion ability design & implementation (including particles and VFX)
-- Aisuirocellist - main theme composition, sound effects, menu UI, and CONTROLS scene
-- James-275 - assimilation system, enemy AI & pathfinding, and minion auto-targeting
-- TheSpoon7784 - enemy/minion sprites, health bars, and enemy spawn design
+- [@nirow1010](https://github.com/nirow1010) - player movement design, entity class hierarchy, and enemy/minion ability design & implementation (including particles and VFX)
+- [@Aisuirocellist](https://github.com/Aisuirocellist) - main theme composition, sound effects, menu UI, and CONTROLS scene
+- [@James-275](https://github.com/James-275) - assimilation system, enemy AI & pathfinding, and minion auto-targeting
+- [@TheSpoon7784](https://github.com/TheSpoon7784) - enemy/minion sprites, health bars, and enemy spawn design
 
 Each member contributed support across other areas as needed, as well as to the game documentation and core concept.
 
