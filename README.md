@@ -80,4 +80,4 @@ Each member contributed support across other areas as needed, as well as to the 
 - [JIK-A-4. Itch.io](https://jik-a-4.itch.io/freepixel) - Space Pixel Art Asset Pack
 - [Deep-Fold - Itch.io](https://deep-fold.itch.io/space-background-generator) - Pixel Space Background Generator
 - [BDragon1727 - Itch.io](https://bdragon1727.itch.io/basic-pixel-health-bar-and-scroll-bar) - Basic Pixel Health bar and Scroll bar
-- [Particle Pack | VFX Particles | Unity Asset Store](https://assetstore.unity.com/packages/vfx/particles/particle-pack-127325?srsltid=AfmBOorUvxGWc_Orc7YUt4505scjlHTOX9dPqB1CNnUJddw99QUadq82)
+- [Unity Technologies - Unity Asset Store](https://assetstore.unity.com/packages/vfx/particles/particle-pack-127325?srsltid=AfmBOorUvxGWc_Orc7YUt4505scjlHTOX9dPqB1CNnUJddw99QUadq82) - Particle Pack | VFX Particles
