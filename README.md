@@ -60,14 +60,14 @@ Due to a WebGL limitation, the electric enemy's orb VFX does not render correctl
 ## Lessons Learned
 
 - Designed a fail-to-win progression system, centered around the assimilation mechanic
-- Implemented acceleration-based, space-like movement to achieve smooth yet slippery movement
+- Implemented acceleration-based, space-like movement to achieve smooth yet slippery movement (conceptually inspired by [@DawnosaurDev](https://github.com/DawnosaurDev) - modified to vector-based top-down movement)
 - Balanced player, minion, and enemy strengths to maintain a consistent difficulty
 - Built a state-based enemy AI system that idles around the Earth and chases or attacks players and minions accordingly
 - Learned that the hierarchical enemy/minion class structure (base entity => enemy/minion => specific types) significantly simplifies logic term logic
 
 ## Contributors
 
-- [@nirow1010](https://github.com/nirow1010) - player movement design, entity class hierarchy, and enemy/minion ability design & implementation (including particles and VFX)
+- [@nirow1010](https://github.com/nirow1010) - custom player movement design, entity class hierarchy, and enemy/minion ability design & implementation (including particles and VFX)
 - [@Aisuirocellist](https://github.com/Aisuirocellist) - main theme composition, sound effects, menu UI, and CONTROLS scene
 - [@James-275](https://github.com/James-275) - assimilation system, enemy AI & pathfinding, and minion auto-targeting
 - [@TheSpoon7784](https://github.com/TheSpoon7784) - enemy/minion sprites, health bars, and enemy spawn design
@@ -81,3 +81,4 @@ Each member contributed support across other areas as needed, as well as to the 
 - [Deep-Fold - Itch.io](https://deep-fold.itch.io/space-background-generator) - Pixel Space Background Generator
 - [BDragon1727 - Itch.io](https://bdragon1727.itch.io/basic-pixel-health-bar-and-scroll-bar) - Basic Pixel Health bar and Scroll bar
 - [Unity Technologies - Unity Asset Store](https://assetstore.unity.com/packages/vfx/particles/particle-pack-127325?srsltid=AfmBOorUvxGWc_Orc7YUt4505scjlHTOX9dPqB1CNnUJddw99QUadq82) - Particle Pack | VFX Particles
+- [DawnosaurDev - Github](https://github.com/DawnosaurDev/platformer-movement/tree/main) - platformer movement
